@@ -1,0 +1,72 @@
+//
+//  pchFile.pch
+//  TZLM
+//
+//  Created by  sun on 2017/2/25.
+//  Copyright © 2017年 上海询通商务咨询有限公司. All rights reserved.
+//
+
+#ifndef pchFile_pch
+#define pchFile_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "AppDelegate.h"
+#import "TZConfig.h"
+
+
+#import "RDVTabBarController.h"
+#import "RDVTabBarItem.h"
+#import "RDVTabBar.h"
+#import "VTGeneralTool.h"
+#import "SDImageCache.h"
+#import "UIImageView+WebCache.h"
+#import "AFNetworking.h"    
+#import "Masonry.h"
+#import "MJRefresh.h"
+#import "MBProgressHUD.h"
+#import "SDCycleScrollView.h"
+#import "WMHttpTool.h"
+#import "CFProgressHUD.h"
+#import "MJExtension.h"
+#import "UIFontAddition.h"
+
+//首页引导
+#import "GuideHomePageViewController.h"
+//首页
+#import "HomePageViewController.h"
+//借贷信息
+#import "BorrowInfoViewController.h"
+//查询
+#import "QueryInfoViewController.h"
+//关于我们
+#import "AboutMyViewController.h"
+//消息
+#import "MessageViewController.h"
+//登录
+#import "LoginViewController.h"
+//注册
+#import "RegisterViewController.h"
+
+//----------------------全局URL-----------------------------
+//测试环境
+#define TZ_MAIN  @"http://192.168.0.104/ceshi/"
+//正式环境
+//#define TZ_MAIN  @"http://192.168.0.104/ceshi/"
+
+#define kCategory_List  [TZ_MAIN stringByAppendingString:@"App/category/category_list"] //导航栏目接口
+#define kCity_List   [TZ_MAIN stringByAppendingString:@"App/city/city_list"]  // 城市数组接口
+#define kCity_Index  [TZ_MAIN stringByAppendingString:@"App/city/city_index.html"] //切换城市首页数据
+#define kDocument_List  [TZ_MAIN stringByAppendingString:@"App/document/document_list.html"] //文档列表接口
+#define kImg_URL [TZ_MAIN stringByAppendingString:@"App/document/img.html"] //获取图片url接口
+#define kUser_Verify [TZ_MAIN stringByAppendingString:@"App/User/m_verify.html"] //发送短信验证码接口
+#define kUser_Register [TZ_MAIN stringByAppendingString:@"App/User/register.html"] //用户注册接口
+#define kUser_Login [TZ_MAIN stringByAppendingString:@"App/User/login.html"] //用户登录接口
+#define kUser_Logout [TZ_MAIN stringByAppendingString:@"App/User/logout.html"] //用户退出登录接口
+
+
+
+
+
+
+#endif /* pchFile_pch */
