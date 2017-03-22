@@ -13,7 +13,7 @@
 /**
  首页启动轮播图
  */
--(void)createloadingScrollView;
+-(void)createLoadingScrollView;
 
 /**
  tabbar实例

@@ -21,7 +21,7 @@
 
 #define SZNotificationCenter [NSNotificationCenter defaultCenter]
 //------------------------全局的颜色------------------------------------
-#define Main_Color [UIColor colorWithRed:(36)/255.0 green:(167)/255.0 blue:(146)/255.0 alpha:1.0]
+#define Main_Color [UIColor colorWithRed:(39)/255.0 green:(55)/255.0 blue:(74)/255.0 alpha:1.0]
 #define BackGround_Color [UIColor colorWithRed:(235)/255.0 green:(235)/255.0 blue:(241)/255.0 alpha:1.0]
 #define VTColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #define RGBColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]

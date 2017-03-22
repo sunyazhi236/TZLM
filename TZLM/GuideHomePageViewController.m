@@ -11,7 +11,7 @@
 #import "ProvinceViewController.h"
 #import "CityViewController.h"
 
-@interface GuideHomePageViewController ()<SDCycleScrollViewDelegate,UISearchBarDelegate,CLLocationManagerDelegate>{
+@interface GuideHomePageViewController ()<SDCycleScrollViewDelegate,UISearchBarDelegate,CLLocationManagerDelegate,UIApplicationDelegate>{
     UIScrollView *_scrollView;
     UISearchBar *customSearchBar;
     UIButton *button;
@@ -27,13 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    if (IOSSystemVersion >= 7.0){
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-        self.extendedLayoutIncludesOpaqueBars = NO;
-        self.modalPresentationCapturesStatusBarAppearance = NO;
-        
-    }
-    
+
     
     _headerView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, kAutoHEX(kScreenW * 112 / 320)) ];
     _scrollView =[[UIScrollView alloc]initWithFrame:_headerView.bounds];
@@ -84,28 +78,28 @@
     _scrollView.contentSize = CGSizeMake(kScreenW*imageNames.count, _headerView.frame.size.height);
     [self.view addSubview:_scrollView];
 
-    
-    CGRect mainViewBounds = [AppDelegate rootNavigationController].view.bounds;
-    customSearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(CGRectGetWidth(mainViewBounds)/2-((CGRectGetWidth(mainViewBounds)-120)/2), CGRectGetMinY(mainViewBounds)+22, CGRectGetWidth(mainViewBounds)-120, 40)];
+    AppDelegate *app =(AppDelegate*)[UIApplication sharedApplication].delegate;
+    CGRect mainViewBounds = app.viewController.navigationController.navigationBar.bounds;
+    customSearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(CGRectGetWidth(mainViewBounds)/2-((CGRectGetWidth(mainViewBounds)-120)/2), CGRectGetMinY(mainViewBounds)+10, CGRectGetWidth(mainViewBounds)-120, 25)];
     customSearchBar.delegate = self;
     [customSearchBar setPlaceholder:@"搜索"];
     customSearchBar.backgroundImage = [UIImage new];
     customSearchBar.showsCancelButton = NO;
     customSearchBar.searchBarStyle = UIBarMetricsDefault;
     customSearchBar.keyboardType = UIKeyboardTypeDefault;
-    [[AppDelegate rootNavigationController].view addSubview:customSearchBar];
+    [app.viewController.navigationController.navigationBar addSubview:customSearchBar];
     
     button=[UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame=CGRectMake((5), (30), kAutoWEX(60), kAutoHEX(25));
+    button.frame=CGRectMake((5), (10), kAutoWEX(60), kAutoHEX(25));
 //    button.backgroundColor=[UIColor redColor];
      button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    button.titleLabel.font = [UIFont systemFontOfSize_5:14];
+    button.titleLabel.font = [UIFont systemFontOfSize_5:14]; 
     [button addTarget:self action:@selector(ClickCity:) forControlEvents:UIControlEventTouchUpInside];
     UIImage *image=[UIImage imageNamed:@"Xjiantou"];
     [button setImage:image forState:UIControlStateNormal];
     [button setImageEdgeInsets:UIEdgeInsetsMake(kAutoHEX(5), kAutoWEX(40), kAutoHEX(5),kAutoWEX(5))];
     
-    [[AppDelegate rootNavigationController].view addSubview:button];
+    [app.viewController.navigationController.navigationBar addSubview:button];
     
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
     //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
@@ -284,13 +278,15 @@
 
 -(void)ClickJDXX:(UIButton *)sender{
     NSLog(@"JDXX");
+    HomePageViewController *home=[[HomePageViewController alloc]init];
+    [self.navigationController pushViewController:home animated:YES];
 }
 
 -(void)ClickZZZR:(UIButton *)sender{
     NSLog(@"ZZZR");
 }
 -(void)ClickJRGS:(UIButton *)sender{
-      NSLog(@"JRGS");
+    NSLog(@"JRGS");
 }
 
 -(void)ClickCXLL:(UIButton *)sender{
@@ -375,6 +371,7 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     customSearchBar.hidden=YES;
     button.hidden=YES;
 }

@@ -18,6 +18,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
         self.view.backgroundColor=[UIColor grayColor];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+
+      [super viewWillAppear:animated];
+    //   self.navigationController.navigationBarHidden = YES;
+//    [AppDelegate rootNavigationController].navigationBar.hidden=YES;
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+      [super viewWillDisappear:animated];
+//    self.navigationController.navigationBarHidden = NO;
+//     [AppDelegate rootNavigationController].navigationBar.hidden=NO;
 }
 
 - (void)didReceiveMemoryWarning {

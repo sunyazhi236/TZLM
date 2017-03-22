@@ -9,7 +9,7 @@
 #import "pchFile.pch"
 #import "AppDelegate+RootController.h"
 
-@interface AppDelegate ()<RDVTabBarControllerDelegate,UIScrollViewDelegate,UITabBarControllerDelegate>
+@interface AppDelegate ()<RDVTabBarControllerDelegate,UIScrollViewDelegate>
 
 @end
 
@@ -50,6 +50,7 @@
     [navc.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize_5:19],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     navc.navigationBar.tintColor = [UIColor whiteColor];
     self.window.rootViewController = navc;
+    NSLog(@"++++++%@",NSStringFromCGSize(self.viewController.navigationController.navigationBar.frame.size));
 }
 
 /**
@@ -82,7 +83,7 @@
 {
     
     UIImage *finishedImage = [VTGeneralTool createImageWithColor:[UIColor colorWithRed:37.0f/255.0f green:165.0f/255.0f blue:129.0f/255.0f alpha:1.0]];
-    UIImage *unfinishedImage = [VTGeneralTool createImageWithColor: [UIColor colorWithRed:39.0f/255.0f green:55.0f/255.0f blue:74.0f/255.0f alpha:1.0]];
+    UIImage *unfinishedImage = [VTGeneralTool createImageWithColor: Main_Color];
                     
 //    NSArray *tabBarItemImages = @[@"tpo_tab_home",@"tpo_tab_found",@"tab_children",@"tpo_tab_course",@"tpo_tab_user"];
 //    NSArray *selectedImages = @[@"tpo_tab_home_pre",@"tpo_tab_found_pre",@"tab_children_pre",@"tpo_tab_course_pre",@"tpo_tab_user_pre"];
@@ -131,8 +132,7 @@
  *  首次启动轮播图
  */
 #pragma mark - 引导页
-- (void)createLoadingScrollView
-{//引导页
+-(void)createLoadingScrollView{//引导页
     UIScrollView *sc =[[UIScrollView alloc]initWithFrame:self.window.bounds];
     sc.pagingEnabled=YES;
     sc.delegate=self;
@@ -184,19 +184,24 @@
     
     if ([viewController isKindOfClass:[GuideHomePageViewController class]])
     {
+        tabBarController.navigationController.navigationBarHidden=NO;
         tabBarController.navigationItem.title = @"";
     }
     if ([viewController isKindOfClass:[BorrowInfoViewController class]])
     {
+        tabBarController.navigationController.navigationBarHidden=NO;
         tabBarController.navigationItem.title = @"信息";
     }
     if ([viewController isKindOfClass:[QueryInfoViewController class]])
     {
+        tabBarController.navigationController.navigationBarHidden=NO;
         tabBarController.navigationItem.title = @"联盟论坛";
     }
 
     if ([viewController isKindOfClass:[AboutMyViewController class]])
     {
+//        [self.navigationController setNavigationBarHidden:YES animated:NO];
+        tabBarController.navigationController.navigationBarHidden=YES;
         tabBarController.navigationItem.title = @"我的";
     }
     

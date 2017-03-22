@@ -48,15 +48,15 @@
     
     [super viewWillAppear:animated];
     
-    [self rdv_tabBarController].navigationItem.titleView = nil;
-    if ([self isKindOfClass:[GuideHomePageViewController class]] || [self isKindOfClass:[BorrowInfoViewController class]]  || [self isKindOfClass:[QueryInfoViewController class]]  || [self isKindOfClass:[AboutMyViewController class]])
+    if ([self isKindOfClass:[GuideHomePageViewController class]])
     {
         [self messageBar];
     }
     else
     {
         [self rdv_tabBarController].navigationItem.rightBarButtonItem = nil;
-        [self rdv_tabBarController].navigationItem.rightBarButtonItems = nil;
+        [self rdv_tabBarController].navigationItem.leftBarButtonItem = nil;
+        [self rdv_tabBarController].navigationItem.titleView = nil;
     }
     
     [self rdv_tabBarController].navigationController.navigationBar.shadowImage = [[UIImage alloc]init];

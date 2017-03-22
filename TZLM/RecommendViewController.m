@@ -45,12 +45,7 @@ static NSString *const VIPCell = @"VIPCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    if (IOSSystemVersion >= 7.0){
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-        self.extendedLayoutIncludesOpaqueBars = NO;
-        self.modalPresentationCapturesStatusBarAppearance = NO;
-        
-    }
+ 
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH-20-44-49-40)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -58,7 +53,7 @@ static NSString *const VIPCell = @"VIPCell";
     [CFProgressHUD showLoadingWithView:self.view];
     [self requestBorrow];
     
-
+   self.title = @"借贷信息";
 }
 
 //根据item的宽度与indexPath计算每一个item的高度
