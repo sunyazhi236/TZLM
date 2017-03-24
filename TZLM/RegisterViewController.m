@@ -78,7 +78,7 @@
     btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(kAutoWEX(63), kAutoHEX(300), kAutoWEX(18), kAutoHEX(18));
     [btn setBackgroundImage:[UIImage imageNamed:@"zhuce_on"] forState:UIControlStateNormal];
-     btn.selected = YES;
+    btn.selected = YES;
     [btn addTarget:self action:@selector(ClickBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
     
