@@ -50,7 +50,6 @@
     [navc.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize_5:19],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     navc.navigationBar.tintColor = [UIColor whiteColor];
     self.window.rootViewController = navc;
-    NSLog(@"++++++%@",NSStringFromCGSize(self.viewController.navigationController.navigationBar.frame.size));
 }
 
 /**
@@ -111,7 +110,7 @@
         [item setUnselectedTitleAttributes:unseleAtrr];
         [item setSelectedTitleAttributes:seleAtrr];
         
-        [item setTitle:@[@"主页",@"信息",@"联盟论坛",@"我的"][index]];
+        [item setTitle:@[@"主页",@"发布",@"联盟论坛",@"我的"][index]];
         
         index++;
     }
@@ -190,7 +189,7 @@
     if ([viewController isKindOfClass:[BorrowInfoViewController class]])
     {
         tabBarController.navigationController.navigationBarHidden=NO;
-        tabBarController.navigationItem.title = @"信息";
+        tabBarController.navigationItem.title = @"发布";
     }
     if ([viewController isKindOfClass:[QueryInfoViewController class]])
     {
@@ -200,7 +199,6 @@
 
     if ([viewController isKindOfClass:[AboutMyViewController class]])
     {
-//        [self.navigationController setNavigationBarHidden:YES animated:NO];
         tabBarController.navigationController.navigationBarHidden=YES;
         tabBarController.navigationItem.title = @"我的";
     }

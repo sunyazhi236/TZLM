@@ -105,7 +105,7 @@
     //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
     tapGestureRecognizer.cancelsTouchesInView = NO;
     //将触摸事件添加到当前view
-    [[AppDelegate rootNavigationController].view addGestureRecognizer:tapGestureRecognizer];
+    [app.viewController.view addGestureRecognizer:tapGestureRecognizer];
     
     //城市定位功能
     if(!_locationManager){
