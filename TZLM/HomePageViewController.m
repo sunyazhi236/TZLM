@@ -72,14 +72,13 @@
        AppDelegate *app =(AppDelegate*)[UIApplication sharedApplication].delegate;
     
     button=[UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame=CGRectMake(kAutoWEX(kScreenW-60), kAutoHEX(10), kAutoWEX(60), kAutoHEX(25));
-    //    button.backgroundColor=[UIColor redColor];
+    button.frame=CGRectMake((kScreenW-60), (10), (60), (25));
     button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     button.titleLabel.font = [UIFont systemFontOfSize_5:14];
     [button addTarget:self action:@selector(ClickCity:) forControlEvents:UIControlEventTouchUpInside];
     UIImage *image=[UIImage imageNamed:@"Xjiantou"];
     [button setImage:image forState:UIControlStateNormal];
-    [button setImageEdgeInsets:UIEdgeInsetsMake(kAutoHEX(5), kAutoWEX(40), kAutoHEX(5),kAutoWEX(5))];
+    [button setImageEdgeInsets:UIEdgeInsetsMake((5), (45), (5),(5))];
     
     [self.navigationController.navigationBar addSubview:button];
 

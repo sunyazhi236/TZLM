@@ -81,14 +81,14 @@
     AppDelegate *app =(AppDelegate*)[UIApplication sharedApplication].delegate;
     
     imgV=[[UIImageView alloc]init];
-    imgV.frame=CGRectMake(kAutoWEX(5), kAutoHEX(15), kAutoWEX(80), kAutoHEX(20));
+    imgV.frame=CGRectMake(kAutoWEX(5), (15), kAutoWEX(80), (20));
     UIImage *image=[UIImage imageNamed:@"touzi"];
     imgV.image =image;
     [app.viewController.navigationController.navigationBar addSubview:imgV];
     
 
     CGRect mainViewBounds = app.viewController.navigationController.navigationBar.bounds;
-    customSearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(kAutoWEX(CGRectGetWidth(mainViewBounds)/2-imgV.frame.size.width+10), kAutoHEX(CGRectGetMinY(mainViewBounds)+10), kAutoWEX(CGRectGetWidth(mainViewBounds)/2+30), kAutoHEX(25))];
+    customSearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake((CGRectGetWidth(mainViewBounds)/2-imgV.frame.size.width+10), (CGRectGetMinY(mainViewBounds)+10), (CGRectGetWidth(mainViewBounds)/2+30), (25))];
     customSearchBar.delegate = self;
     [customSearchBar setPlaceholder:@"搜索"];
     customSearchBar.backgroundImage = [UIImage new];
