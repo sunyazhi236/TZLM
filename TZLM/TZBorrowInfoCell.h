@@ -13,7 +13,7 @@
 @property(nonatomic,strong) TZBorrowInfoModel *borrowModel;
 
 @property (weak, nonatomic) IBOutlet UILabel *borrowText;
-@property (weak, nonatomic) IBOutlet UILabel *borrowState;
+@property (weak, nonatomic) IBOutlet UIButton *borrowState;
 @property (weak, nonatomic) IBOutlet UILabel *feedbackText;
 @property (weak, nonatomic) IBOutlet UILabel *theTimeText;
 

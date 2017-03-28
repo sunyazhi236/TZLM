@@ -65,8 +65,11 @@ static CityViewController *_instance = nil;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
    [CityViewController shareInstance].cityStr = [[_cityArray objectAtIndex:indexPath.row]objectForKey:@"cityname"];
-  
-    [[AppDelegate rootNavigationController] popToRootViewControllerAnimated:YES];
+    for (UIViewController *controller in self.navigationController.viewControllers) {
+        if ([controller isKindOfClass:[HomePageViewController class]]) {
+            [self.navigationController popToViewController:controller animated:YES];
+        }
+    }
 }
 
 

@@ -25,20 +25,23 @@
 -(void)setUI{
     if (_borrowModel==nil) {
         self.borrowText.text=@"";
-        self.borrowState.text=@"";
+        [self.borrowState setTitle:@"" forState:UIControlStateNormal];
         self.feedbackText.text=@"";
         self.theTimeText.text=@"";
     }
     else{
-        
+    self.borrowText.numberOfLines = 0;
+    self.borrowText.lineBreakMode = NSLineBreakByTruncatingTail;
     self.borrowText.text = _borrowModel.lend_content;
  
         if (_borrowModel.cc_class == 1 ) {
-            self.borrowState.text = @"借款信息";
-            [self.borrowState setTextColor:[UIColor colorWithDisplayP3Red:80/255.0 green:152/255.0 blue:4/255.0 alpha:1.0]];
+//            self.borrowState.text = @"借款信息";
+//            [self.borrowState setTextColor:[UIColor colorWithDisplayP3Red:80/255.0 green:152/255.0 blue:4/255.0 alpha:1.0]];
+            [self.borrowState setBackgroundImage:[UIImage imageNamed:@"jiekuan"] forState:UIControlStateNormal];
         }else{
-            self.borrowState.text = @"放款信息";
-            [self.borrowState setTextColor:[UIColor colorWithDisplayP3Red:252/255.0 green:40/255.0 blue:104/255.0 alpha:1.0]];
+//            self.borrowState.text = @"放款信息";
+//            [self.borrowState setTextColor:[UIColor colorWithDisplayP3Red:252/255.0 green:40/255.0 blue:104/255.0 alpha:1.0]];
+            [self.borrowState setBackgroundImage:[UIImage imageNamed:@"fangkuan"] forState:UIControlStateNormal];
         }
     }
     if ([_borrowModel.yw_uid integerValue]==0) {
@@ -46,7 +49,7 @@
     }else{
         self.feedbackText.text= @"用户昵称";
     }
-
+   [self.feedbackText setTextColor:[UIColor grayColor]];
     self.theTimeText.text=[SMGlobalMethod getTimeFromShortTimeSp:_borrowModel.update_time];
     [self.theTimeText setTextColor:[UIColor grayColor]];
     

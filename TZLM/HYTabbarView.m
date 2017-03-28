@@ -11,7 +11,7 @@
 #define HYScreenW [UIScreen mainScreen].bounds.size.width
 #define HYScreenH [UIScreen mainScreen].bounds.size.height
 static CGFloat const topBarItemMargin = 15; ///标题之间的间距
-static CGFloat const topBarHeight = 40; //顶部标签条的高度
+static CGFloat const topBarHeight = 30; //顶部标签条的高度
 @interface HYTabbarView () <UICollectionViewDataSource,UICollectionViewDelegate>
 @property (nonatomic,strong) NSMutableArray * titles;
 @property (nonatomic,strong) NSMutableArray * subViewControllers;
@@ -63,7 +63,7 @@ static CGFloat const topBarHeight = 40; //顶部标签条的高度
     self.tabbar = tabbar;
     tabbar.showsHorizontalScrollIndicator = NO;
     tabbar.showsVerticalScrollIndicator = NO;
-    _tabbar.backgroundColor = [UIColor orangeColor];
+    _tabbar.backgroundColor = RGBColor(227, 227, 227);
     tabbar.bounces = NO;
     
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
@@ -151,8 +151,8 @@ static CGFloat const topBarHeight = 40; //顶部标签条的高度
     selectedBtn.selected = YES;
     
     [UIView animateWithDuration:0.25 animations:^{
-        preSelectedBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-        selectedBtn.titleLabel.font = [UIFont systemFontOfSize:18];
+        preSelectedBtn.titleLabel.font = [UIFont systemFontOfSize_5:12];
+        selectedBtn.titleLabel.font = [UIFont systemFontOfSize_5:12];
         
         UIButton * btn = self.titles[self.selectedIndex];
         // 计算偏移量
@@ -181,7 +181,7 @@ static CGFloat const topBarHeight = 40; //顶部标签条的高度
     UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.tabbar addSubview:btn];
     [self.titles addObject:btn];
-    btn.titleLabel.font = [UIFont systemFontOfSize:18];
+    btn.titleLabel.font = [UIFont systemFontOfSize_5:12];
     [self setupBtn:btn withTitle:viewController.title];
     [btn addTarget:self action:@selector(itemSelected:) forControlEvents:UIControlEventTouchUpInside];
     [self.subViewControllers addObject:viewController];
@@ -193,7 +193,7 @@ static CGFloat const topBarHeight = 40; //顶部标签条的高度
     [btn setTitle:title forState:UIControlStateNormal];
     [btn sizeToFit];
     _tabbarWidth += btn.frame.size.width + topBarItemMargin;
-    btn.titleLabel.font = [UIFont systemFontOfSize:15];
+    btn.titleLabel.font = [UIFont systemFontOfSize_5:12];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
     

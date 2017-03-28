@@ -11,189 +11,183 @@
 #import "TZBorrowInfoModel.h"
 #import "TZBondTransferCell.h"
 #import "TZBondTransferModel.h"
-#import "XRCollectionViewCell.h"
-#import "XRWaterfallLayout.h"
-#import "XRImage.h"
+#import "RapidRegistrationViewController.h"
 
-@interface RecommendViewController ()<UICollectionViewDataSource, XRWaterfallLayoutDelegate,UITableViewDelegate,UITableViewDataSource>{
-        UITableView *_tableView;
+#define Start_X          0.0f      // 第一个按钮的X坐标
+#define Start_Y          0.0f     // 第一个按钮的Y坐标
+#define Width_Space      0.0f      // 2个按钮之间的横间距
+#define Height_Space     0.0f     // 竖间距
+#define Button_Height   28.0f    // 高
+#define Button_Width    106.0f    // 宽
+
+@interface RecommendViewController ()<UITableViewDelegate,UITableViewDataSource>{
+    UITableView *_tableView;//全部信息 tableView
+    UITableView *_FKtableView;//放款信息 tableView
+    UITableView *_JKtableView;//借款信息 tableView
 }
-@property (nonatomic, strong) UICollectionView *collectionView;
-@property (nonatomic, strong) NSMutableArray<XRImage *> *images;
+@property(nonatomic,strong)UIButton *fBtn;
+@property(nonatomic,strong)UIScrollView *scrollView;
 
 @end
 
 @implementation RecommendViewController
 static NSString *const JDXXCell = @"TZBorrowInfoCell";
-static NSString *const ZQZRCell = @"TZBondTransferCell";
-static NSString *const JRGSCell = @"XRCollectionViewCell";
-static NSString *const VIPCell = @"VIPCell";
-- (NSMutableArray *)images {
-    //从plist文件中取出字典数组，并封装成对象模型，存入模型数组中
-    if (!_images) {
-        _images = [NSMutableArray array];
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"1.plist" ofType:nil];
-        NSArray *imageDics = [NSArray arrayWithContentsOfFile:path];
-        for (NSDictionary *imageDic in imageDics) {
-            XRImage *image = [XRImage imageWithImageDic:imageDic];
-            [_images addObject:image];
-        }
-    }
-    return _images;
+
+
+-(void)ClickJSDK:(UIButton*)sender{
+    RapidRegistrationViewController *rapidVC=[[RapidRegistrationViewController alloc]init];
+    AppDelegate *app =(AppDelegate*)[UIApplication sharedApplication].delegate;
+    [app.viewController.navigationController pushViewController:rapidVC animated:YES];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
- 
-    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH-20-44-49-40)];
+    self.view.backgroundColor = RGBColor(235, 230, 229);
+    UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, kAutoHEX(60))];
+    view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:view];
+    UIButton *jisuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    jisuBtn.frame = CGRectMake(kAutoWEX(116), kAutoHEX(20), kAutoWEX(91), kAutoHEX(23));
+    [jisuBtn setBackgroundImage:[UIImage imageNamed:@"jisujiedai"] forState:UIControlStateNormal];
+    [jisuBtn addTarget:self action:@selector(ClickJSDK:) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:jisuBtn];
+    //button的背景
+    UIView *BtnBgView=[[UIView alloc]initWithFrame:CGRectMake(0, kAutoHEX(61), kScreenW, kAutoHEX(28))];
+    BtnBgView.backgroundColor= [UIColor whiteColor];
+    NSArray *array = @[@"全部信息",@"放款信息",@"借款信息"];
+    for (int i = 0 ; i < 3; i++) {
+        NSInteger index = i % 3;
+        NSInteger page = i / 3;
+        // 圆角按钮
+       UIButton *Btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [Btn setTitle:array[i] forState:UIControlStateNormal];
+        [Btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [Btn.titleLabel setFont:[UIFont systemFontOfSize_5:16]];
+        Btn.tag = i;//这句话不写等于废了
+        Btn.frame = CGRectMake(kAutoWEX(index * (Button_Width + Width_Space) + Start_X), kAutoHEX (page  * (Button_Height + Height_Space)+Start_Y),kAutoWEX(Button_Width), kAutoWEX(Button_Height));
+        
+        [BtnBgView addSubview:Btn];
+        [self.view addSubview:BtnBgView];
+        
+        if (Btn.tag == 0) {
+            [Btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            //定义第一个按钮sender是已经被选中
+            _fBtn = Btn;
+        }
+        else{
+            [Btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        }
+        //按钮点击方法
+        [Btn addTarget:self action:@selector(BtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    
+    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, kAutoHEX(90), kScreenW*3, kScreenH-20-44-kAutoHEX(30)-kAutoHEX(90))];
+    self.scrollView.contentSize = CGSizeMake(kScreenW*3, 0);
+    [self.view addSubview:_scrollView];
+    //全部信息
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, _scrollView.frame.size.height)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    [self.view addSubview:_tableView];
+    [_scrollView addSubview:_tableView];
+    //放款信息
+    _FKtableView = [[UITableView alloc]initWithFrame:CGRectMake(kScreenW, 0, kScreenW, _scrollView.frame.size.height)];
+    _FKtableView.delegate = self;
+    _FKtableView.dataSource = self;
+    [_scrollView addSubview:_FKtableView];
+    //借款信息
+    _JKtableView = [[UITableView alloc]initWithFrame:CGRectMake(kScreenW*2, 0, kScreenW, _scrollView.frame.size.height)];
+    _JKtableView.delegate = self;
+    _JKtableView.dataSource = self;
+    [_scrollView addSubview:_JKtableView];
+    
     [CFProgressHUD showLoadingWithView:self.view];
     [self requestBorrow];
+    [self addTableRefresh];
+
+}
+
+-(void)addTableRefresh{
+    // 添加头部刷新
+    MJRefreshNormalHeader * header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+//        _page = 0;
+        
+        NSLog(@"++++%@",self.JDXXArray);
+        self.JDXXArray =[NSMutableArray arrayWithArray:_JDXXArray];
+        [self.JDXXArray removeAllObjects];
+          NSLog(@"++++%@",self.JDXXArray);
+        // 请求数据
+        [CFProgressHUD showLoadingWithView:self.view];
+        [self requestBorrow];
+    }];
+    _tableView.mj_header = header;
     
-   self.title = @"借贷信息";
+    // 添加尾部刷新
+    MJRefreshAutoGifFooter * footer = [MJRefreshAutoGifFooter footerWithRefreshingBlock:^{
+                                           
+//         _page++;
+        // 请求数据
+         [CFProgressHUD showLoadingWithView:self.view];
+         [self requestBorrow];
+    }];
+    _tableView.mj_footer = footer;
+
 }
 
-//根据item的宽度与indexPath计算每一个item的高度
-- (CGFloat)waterfallLayout:(XRWaterfallLayout *)waterfallLayout itemHeightForWidth:(CGFloat)itemWidth atIndexPath:(NSIndexPath *)indexPath {
-    //根据图片的原始尺寸，及显示宽度，等比例缩放来计算显示高度
-//    XRImage *image = self.images[indexPath.item];
-    return 100;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return  self.JRGSArray .count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *ID = @"cell";
-    XRCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+-(void)addFKTableRefresh{
+    // 添加头部刷新
+    MJRefreshNormalHeader * header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        //        _page = 0;
+        
+        NSLog(@"++++%@",self.JDXXArray);
+        //        [self.JDXXArray removeAllObjects];
+        // 请求数据
+        [CFProgressHUD showLoadingWithView:self.view];
+        [self requestBorrow];
+    }];
+    _FKtableView.mj_header = header;
     
-    self.singleJRGSDict=[NSMutableDictionary dictionaryWithDictionary:[_JRGSArray objectAtIndex:indexPath.item]];
-    NSArray *arr=[NSArray arrayWithArray:[self.singleJRGSDict objectForKey:@"cover_id"]];
-    NSDictionary *dict=[NSDictionary  dictionaryWithDictionary:[arr objectAtIndex:0]];
-    NSString *str=[NSString stringWithFormat:@"%@%@",TZ_MAIN,[dict objectForKey:@"path_small"]];
-    NSURL *url = [NSURL URLWithString:str];
-    cell.imageURL = url;
-
-    return cell;
+    // 添加尾部刷新
+    MJRefreshAutoGifFooter * footer = [MJRefreshAutoGifFooter footerWithRefreshingBlock:^{
+        
+        //         _page++;
+        // 请求数据
+        [CFProgressHUD showLoadingWithView:self.view];
+        [self requestBorrow];
+    }];
+    _FKtableView.mj_footer = footer;
 }
 
-
-#pragma mark - 数据源方法
-#pragma mark 返回分组数
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    NSLog(@"计算分组数");
-    return self.InfoListArray.count;
-}
-
-#pragma mark 返回每组行数
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section==0) {
-        return _JDXXArray.count;
-    }else if (section==1){
-        return _ZQZRArray.count;
-    }else if (section==2){
-        return 1;
-    }else if (section==4){
-        return _VIPArray.count;
-    }
-    return 0;
-}
-
-#pragma mark返回每行的单元格
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    TZBorrowInfoCell *cell=[tableView dequeueReusableCellWithIdentifier:JDXXCell];
-    TZBondTransferCell *cell2 =[tableView dequeueReusableCellWithIdentifier:ZQZRCell];
-    UITableViewCell *cell3=[tableView dequeueReusableCellWithIdentifier:JRGSCell];
-    UITableViewCell *cell5=[tableView dequeueReusableCellWithIdentifier:VIPCell];
-    if (indexPath.section==0) {
-        if (cell==nil) {
-            cell=[[[NSBundle mainBundle]loadNibNamed:JDXXCell owner:self options:nil]lastObject];
-  
-        }
-        self.singleJDXXDict=[NSMutableDictionary dictionaryWithDictionary:[_JDXXArray objectAtIndex:indexPath.row]];
-        TZBorrowInfoModel *model=[TZBorrowInfoModel objectWithKeyValues:_singleJDXXDict];
-        cell.borrowModel=model;
-        [CFProgressHUD hideHUDForView:self.view];
-        return cell;
-    }if (indexPath.section==1) {
-        if (cell2==nil) {
-            cell2=[[[NSBundle mainBundle]loadNibNamed:ZQZRCell owner:self options:nil]lastObject];
-
-        }
-        self.singleZQZRDict=[NSMutableDictionary dictionaryWithDictionary:[_ZQZRArray objectAtIndex:indexPath.row]];
-        TZBondTransferModel *model=[TZBondTransferModel objectWithKeyValues:_singleZQZRDict];
-        cell2.bondTransModel=model;
-        [CFProgressHUD hideHUDForView:self.view];
-        return cell2;
-    }if (indexPath.section==2) {
-        if (cell3==nil) {
-        cell3 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:JRGSCell];
-        }
-
-        [cell3.contentView addSubview:self.collectionView];
-        return cell3;
-    }if (indexPath.section==4) {
-        if (cell5 == nil) {
-            cell5 = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:VIPCell];
-        }
-        self.singleVIPDict = [NSMutableDictionary dictionaryWithDictionary:[_VIPArray objectAtIndex:indexPath.row]];
-        NSString *string=[NSString stringWithFormat:@"%@",[self.singleVIPDict objectForKey:@"title"]];
-        cell5.textLabel.text = string;
-        return cell5;
-        }
-
+-(void)addJKTableRefresh{
+    // 添加头部刷新
+    MJRefreshNormalHeader * header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        //        _page = 0;
+        
+        NSLog(@"++++%@",self.JDXXArray);
+        //        [self.JDXXArray removeAllObjects];
+        // 请求数据
+        [CFProgressHUD showLoadingWithView:self.view];
+        [self requestBorrow];
+    }];
+    _JKtableView.mj_header = header;
     
-    return cell;
-}
-
-#pragma mark 返回每组头标题名称
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    if (section==0) {
-        return @"借贷信息";
-    }else if (section==1){
-        return @"债券转让";
-    }else if (section==2){
-        return @"金融公司";
-    }else if (section==3){
-        return @"悬赏启示";
-    }else if (section==4){
-        return @"vip专区";
-    }else if(section==5){
-        return @"失信曝光";
-    }else{
-        return @"未知";
-    }
-}
-
-#pragma mark - 代理方法
-#pragma mark 设置分组标题内容高度
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    // 添加尾部刷新
+    MJRefreshAutoGifFooter * footer = [MJRefreshAutoGifFooter footerWithRefreshingBlock:^{
+        
+        //         _page++;
+        // 请求数据
+        [CFProgressHUD showLoadingWithView:self.view];
+        [self requestBorrow];
+    }];
+    _JKtableView.mj_footer = footer;
     
-    return 40;
 }
-
-#pragma mark 设置每行高度（每行高度可以不一样）
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section==0) {
-        return 80;
-    }else if (indexPath.section==1){
-        return 100;
-    }else if (indexPath.section==2){
-        return _collectionView.frame.size.height;
-    }else if (indexPath.section==4){
-        return 40;
-    }
-    return 0;
-}
-
-
 
 -(void)requestBorrow{
-    
     [CFProgressHUD showLoadingWithView:self.view];
     NSDictionary *dic=@{@"cc_area":@"邢台"};
     NSMutableDictionary *dict=[NSMutableDictionary dictionaryWithDictionary:dic];
@@ -210,26 +204,132 @@ static NSString *const VIPCell = @"VIPCell";
         
         self.VIPDict = [self.InfoListArray objectAtIndex:4];//VIP专区
         self.VIPArray = [self.VIPDict objectForKey:@"vip"];
-
-        [_tableView reloadData];
         
-        //创建瀑布流布局
-        XRWaterfallLayout *waterfall = [XRWaterfallLayout waterFallLayoutWithColumnCount:2];
-        //或者一次性设置
-        [waterfall setColumnSpacing:10 rowSpacing:10 sectionInset:UIEdgeInsetsMake(10, 10, 10, 10)];
-        //设置代理，实现代理方法
-        waterfall.delegate = self;
-        //创建collectionView
-        self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, (self.JRGSArray.count/2*100)+((self.JRGSArray.count/2)+2)*10) collectionViewLayout:waterfall];
-        self.collectionView.backgroundColor = [UIColor redColor];
-        [self.collectionView registerNib:[UINib nibWithNibName:@"XRCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
-        self.collectionView.dataSource = self;
+        [_tableView reloadData];
+        [_FKtableView reloadData];
+        [_JKtableView reloadData];
+        
+        [_tableView.mj_header endRefreshing];
+        [_tableView.mj_footer endRefreshing];
+        [_FKtableView.mj_header endRefreshing];
+        [_FKtableView.mj_footer endRefreshing];
+        [_JKtableView.mj_header endRefreshing];
+        [_JKtableView.mj_footer endRefreshing];
         
         [CFProgressHUD hideHUDForView:self.view];
     } failure:^(NSError *error) {
         [CFProgressHUD hideHUDForView:self.view];
     }];
 }
+
+//点击按钮方法,这里容易犯错
+-(void)BtnClick:(UIButton *)sender{
+    //记住,这里不能写成"mapBtn.tag",这样你点击任何一个button,都只能获取到最后一个button的值,因为前边的按钮都被最后一个button给覆盖了
+    NSLog(@"%ld",sender.tag);
+
+    if (sender.tag == 0) {
+    self.scrollView.contentOffset = CGPointMake(0, 0);
+    }
+    if (sender.tag == 1) {
+    self.scrollView.contentOffset = CGPointMake(kScreenW, 0);
+        [self addFKTableRefresh];
+    }
+    if (sender.tag == 2) {
+    self.scrollView.contentOffset = CGPointMake(kScreenW*2, 0);
+        [self addJKTableRefresh];
+    }
+    if(_fBtn == sender) {
+            //不做处理
+
+    }else{
+    [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [_fBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    _fBtn = sender;
+    }
+}
+
+
+#pragma mark - 数据源方法
+#pragma mark 返回分组数
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    NSLog(@"计算分组数");
+    return _JDXXArray.count;
+}
+
+#pragma mark 返回每组行数
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+ 
+    return 1;
+  
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 8;
+}
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, 8)];
+    view.backgroundColor = RGBColor(235, 230, 229);
+    return view;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+}
+
+#pragma mark返回每行的单元格
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    TZBorrowInfoCell *cell=[tableView dequeueReusableCellWithIdentifier:JDXXCell];
+    
+    UIView *view = [[UIView alloc ]initWithFrame:CGRectMake(0, 0, kScreenW, 10)];
+                    
+    view.backgroundColor = [UIColor colorWithRed:74.0/255 green:56.0/255 blue:58.0/255 alpha:1.0];
+                    
+    [cell.contentView addSubview:view];
+                    
+    if ([tableView isEqual:_tableView]) {
+        if (cell==nil) {
+            cell=[[[NSBundle mainBundle]loadNibNamed:JDXXCell owner:self options:nil]lastObject];
+  
+        }
+        self.singleJDXXDict=[NSMutableDictionary dictionaryWithDictionary:[_JDXXArray objectAtIndex:indexPath.section]];
+        TZBorrowInfoModel *model=[TZBorrowInfoModel objectWithKeyValues:_singleJDXXDict];
+        cell.borrowModel=model;
+        [CFProgressHUD hideHUDForView:self.view];
+        return cell;
+    }if ([tableView isEqual:_FKtableView]) {
+        if (cell==nil) {
+            cell=[[[NSBundle mainBundle]loadNibNamed:JDXXCell owner:self options:nil]lastObject];
+            
+        }
+        self.singleJDXXDict=[NSMutableDictionary dictionaryWithDictionary:[_JDXXArray objectAtIndex:indexPath.section]];
+        TZBorrowInfoModel *model=[TZBorrowInfoModel objectWithKeyValues:_singleJDXXDict];
+        cell.borrowModel=model;
+        [CFProgressHUD hideHUDForView:self.view];
+        return cell;
+    }if ([tableView isEqual:_JKtableView]) {
+        if (cell==nil) {
+            cell=[[[NSBundle mainBundle]loadNibNamed:JDXXCell owner:self options:nil]lastObject];
+            
+        }
+        self.singleJDXXDict=[NSMutableDictionary dictionaryWithDictionary:[_JDXXArray objectAtIndex:indexPath.section]];
+        TZBorrowInfoModel *model=[TZBorrowInfoModel objectWithKeyValues:_singleJDXXDict];
+        cell.borrowModel=model;
+        [CFProgressHUD hideHUDForView:self.view];
+        return cell;
+    }
+    
+    return cell;
+}
+
+
+#pragma mark 设置每行高度（每行高度可以不一样）
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return kAutoHEX(80);
+
+}
+
+
 
 
 -(NSMutableArray *)InfoListArray{

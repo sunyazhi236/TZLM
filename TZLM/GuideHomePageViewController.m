@@ -11,11 +11,12 @@
 #import "ProvinceViewController.h"
 #import "CityViewController.h"
 
-@interface GuideHomePageViewController ()<SDCycleScrollViewDelegate,UISearchBarDelegate,CLLocationManagerDelegate,UIApplicationDelegate>{
+@interface GuideHomePageViewController ()<SDCycleScrollViewDelegate,UISearchBarDelegate>{
     UIScrollView *_scrollView;
     UISearchBar *customSearchBar;
-    UIButton *button;
+//    UIButton *button;
     UIView *_headerView;
+    UIImageView *imgV;
     
 }
 @property (nonatomic,strong) CLLocationManager *locationManager;
@@ -77,10 +78,17 @@
     
     _scrollView.contentSize = CGSizeMake(kScreenW*imageNames.count, _headerView.frame.size.height);
     [self.view addSubview:_scrollView];
-
     AppDelegate *app =(AppDelegate*)[UIApplication sharedApplication].delegate;
+    
+    imgV=[[UIImageView alloc]init];
+    imgV.frame=CGRectMake(kAutoWEX(5), kAutoHEX(15), kAutoWEX(80), kAutoHEX(20));
+    UIImage *image=[UIImage imageNamed:@"touzi"];
+    imgV.image =image;
+    [app.viewController.navigationController.navigationBar addSubview:imgV];
+    
+
     CGRect mainViewBounds = app.viewController.navigationController.navigationBar.bounds;
-    customSearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(CGRectGetWidth(mainViewBounds)/2-((CGRectGetWidth(mainViewBounds)-120)/2), CGRectGetMinY(mainViewBounds)+10, CGRectGetWidth(mainViewBounds)-120, 25)];
+    customSearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(kAutoWEX(CGRectGetWidth(mainViewBounds)/2-imgV.frame.size.width+10), kAutoHEX(CGRectGetMinY(mainViewBounds)+10), kAutoWEX(CGRectGetWidth(mainViewBounds)/2+30), kAutoHEX(25))];
     customSearchBar.delegate = self;
     [customSearchBar setPlaceholder:@"搜索"];
     customSearchBar.backgroundImage = [UIImage new];
@@ -89,42 +97,26 @@
     customSearchBar.keyboardType = UIKeyboardTypeDefault;
     [app.viewController.navigationController.navigationBar addSubview:customSearchBar];
     
-    button=[UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame=CGRectMake((5), (10), kAutoWEX(60), kAutoHEX(25));
-//    button.backgroundColor=[UIColor redColor];
-     button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    button.titleLabel.font = [UIFont systemFontOfSize_5:14]; 
-    [button addTarget:self action:@selector(ClickCity:) forControlEvents:UIControlEventTouchUpInside];
-    UIImage *image=[UIImage imageNamed:@"Xjiantou"];
-    [button setImage:image forState:UIControlStateNormal];
-    [button setImageEdgeInsets:UIEdgeInsetsMake(kAutoHEX(5), kAutoWEX(40), kAutoHEX(5),kAutoWEX(5))];
     
-    [app.viewController.navigationController.navigationBar addSubview:button];
+
+    
+//    button=[UIButton buttonWithType:UIButtonTypeCustom];
+//    button.frame=CGRectMake((5), (10), kAutoWEX(60), kAutoHEX(25));
+////    button.backgroundColor=[UIColor redColor];
+//     button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+//    button.titleLabel.font = [UIFont systemFontOfSize_5:14]; 
+//    [button addTarget:self action:@selector(ClickCity:) forControlEvents:UIControlEventTouchUpInside];
+//    UIImage *image=[UIImage imageNamed:@"Xjiantou"];
+//    [button setImage:image forState:UIControlStateNormal];
+//    [button setImageEdgeInsets:UIEdgeInsetsMake(kAutoHEX(5), kAutoWEX(40), kAutoHEX(5),kAutoWEX(5))];
+//    
+//    [app.viewController.navigationController.navigationBar addSubview:button];
     
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
     //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
     tapGestureRecognizer.cancelsTouchesInView = NO;
     //将触摸事件添加到当前view
-    [app.viewController.view addGestureRecognizer:tapGestureRecognizer];
-    
-    //城市定位功能
-    if(!_locationManager){
-        self.locationManager = [[CLLocationManager alloc] init];
-        if([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]){
-            [self.locationManager requestWhenInUseAuthorization];
-            [self.locationManager requestAlwaysAuthorization];
-        }
-        //设置代理
-        [self.locationManager setDelegate:self];
-        //设置定位精度
-        [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-        //设置距离筛选
-        [self.locationManager setDistanceFilter:200];
-        //开始定位
-        [self.locationManager startUpdatingLocation];
-        //设置开始识别方向
-        [self.locationManager startUpdatingHeading];
-    }
+    [self.view addGestureRecognizer:tapGestureRecognizer];
 
     [self loadGuideView];
     
@@ -321,44 +313,48 @@
     // 如果你发现你的CycleScrollview会在viewWillAppear时图片卡在中间位置，你可以调用此方法调整图片位置
     //    [你的CycleScrollview adjustWhenControllerViewWillAppera];
     customSearchBar.hidden=NO;
-    button.hidden=NO;
-    if ([[CityViewController shareInstance].cityStr isEqualToString:@""]) {
-        [button setTitle:@"邢台" forState:UIControlStateNormal];
-    }else{
-        [button setTitle:[CityViewController shareInstance].cityStr forState:UIControlStateNormal];
-    }
+//    button.hidden=NO;
+    imgV.hidden = NO;
+//    if ([[CityViewController shareInstance].cityStr isEqualToString:@""]) {
+//        [button setTitle:@"邢台" forState:UIControlStateNormal];
+//    }else{
+//        [button setTitle:[CityViewController shareInstance].cityStr forState:UIControlStateNormal];
+//    }
 }
 
-#pragma mark - CLLocationManangerDelegate
-//定位成功以后调用
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    
-    [self.locationManager stopUpdatingLocation];
-    CLLocation *location = locations.lastObject;
-    [self reverseGeocoder:location];
-}
+//#pragma mark - CLLocationManangerDelegate
+////定位成功以后调用
+//- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+//    
+//    [self.locationManager stopUpdatingLocation];
+//    CLLocation *location = locations.lastObject;
+//    [self reverseGeocoder:location];
+//}
 
 #pragma mark Geocoder
-- (void)reverseGeocoder:(CLLocation *)currentLocation {
-    
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    
-    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks,NSError *error) {
-        if(error || placemarks.count ==0){
-            [button setTitle:@"邢台" forState:UIControlStateNormal];
-            NSLog(@"error = %@",error);
-        }else{
-            CLPlacemark  *placemark = placemarks.firstObject;
-            NSLog(@"省：%@",[[placemark addressDictionary] objectForKey:@"State"]);
-            NSLog(@"您所在的城市为:%@",[[placemark addressDictionary]objectForKey:@"City"]);
-            NSString * CityStr=[[placemark addressDictionary]objectForKey:@"City"];
-            [button setTitle:CityStr forState:UIControlStateNormal];
-        }
-    }];
-}
+//- (void)reverseGeocoder:(CLLocation *)currentLocation {
+//    
+//    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+//    
+//    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks,NSError *error) {
+//        if(error || placemarks.count ==0){
+//            [button setTitle:@"邢台" forState:UIControlStateNormal];
+//            NSLog(@"error = %@",error);
+//        }else{
+//            CLPlacemark  *placemark = placemarks.firstObject;
+//            NSLog(@"省：%@",[[placemark addressDictionary] objectForKey:@"State"]);
+//            NSLog(@"您所在的城市为:%@",[[placemark addressDictionary]objectForKey:@"City"]);
+//            NSString * CityStr=[[placemark addressDictionary]objectForKey:@"City"];
+//            [button setTitle:CityStr forState:UIControlStateNormal];
+//        }
+//    }];
+//}
 
 -(void)keyboardHide:(UITapGestureRecognizer*)tap{
-    [customSearchBar resignFirstResponder];
+    if ([customSearchBar isFirstResponder]) {
+        //取消第一响应者。收回键盘
+        [customSearchBar resignFirstResponder];
+    }
 }
 
 
@@ -373,7 +369,8 @@
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     customSearchBar.hidden=YES;
-    button.hidden=YES;
+//    button.hidden=YES;
+    imgV.hidden=YES;
 }
 
 

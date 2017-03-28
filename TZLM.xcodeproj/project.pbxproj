@@ -49,6 +49,7 @@
 		A4407C8B1E63CD5D0052E144 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4407C8A1E63CD5D0052E144 /* MessageUI.framework */; };
 		A44D33451E694806000EE5F2 /* HYTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A44D33421E694806000EE5F2 /* HYTabbarView.m */; };
 		A44D33461E694806000EE5F2 /* HYTabbarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A44D33441E694806000EE5F2 /* HYTabbarCollectionCell.m */; };
+		A44DEE981E8A0BF0001AFE10 /* RapidRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A44DEE971E8A0BF0001AFE10 /* RapidRegistrationViewController.m */; };
 		A44E0D4D1E63FF96007818FC /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A44E0D4C1E63FF96007818FC /* MessageViewController.m */; };
 		A44E0D501E64012C007818FC /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A44E0D4F1E64012C007818FC /* RegisterViewController.m */; };
 		A44E0D531E64013A007818FC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A44E0D521E64013A007818FC /* LoginViewController.m */; };
@@ -146,9 +147,7 @@
 		A45FDDF71E6D341400854E2E /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45FDDF61E6D341400854E2E /* RecommendViewController.m */; };
 		A45FDDFB1E6D3DA100854E2E /* XRCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A45FDDF91E6D3DA100854E2E /* XRCollectionViewCell.m */; };
 		A45FDDFC1E6D3DA100854E2E /* XRCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A45FDDFA1E6D3DA100854E2E /* XRCollectionViewCell.xib */; };
-		A45FDDFF1E6D3DD600854E2E /* XRImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A45FDDFE1E6D3DD600854E2E /* XRImage.m */; };
 		A45FDE021E6D3DE600854E2E /* XRWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A45FDE011E6D3DE600854E2E /* XRWaterfallLayout.m */; };
-		A45FDE041E6D425000854E2E /* 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = A45FDE031E6D425000854E2E /* 1.plist */; };
 		A466B15B1E6A61E200D4E5BD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A466B15A1E6A61E200D4E5BD /* CoreLocation.framework */; };
 		A466B15F1E6A906700D4E5BD /* ProvinceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A466B15E1E6A906700D4E5BD /* ProvinceViewController.m */; };
 		A466B1651E6AA53000D4E5BD /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A466B1641E6AA53000D4E5BD /* CityViewController.m */; };
@@ -277,6 +276,8 @@
 		A44D33421E694806000EE5F2 /* HYTabbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYTabbarView.m; sourceTree = "<group>"; };
 		A44D33431E694806000EE5F2 /* HYTabbarCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYTabbarCollectionCell.h; sourceTree = "<group>"; };
 		A44D33441E694806000EE5F2 /* HYTabbarCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYTabbarCollectionCell.m; sourceTree = "<group>"; };
+		A44DEE961E8A0BF0001AFE10 /* RapidRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidRegistrationViewController.h; sourceTree = "<group>"; };
+		A44DEE971E8A0BF0001AFE10 /* RapidRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RapidRegistrationViewController.m; sourceTree = "<group>"; };
 		A44E0D4B1E63FF96007818FC /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		A44E0D4C1E63FF96007818FC /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		A44E0D4E1E64012C007818FC /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -462,11 +463,8 @@
 		A45FDDF81E6D3DA100854E2E /* XRCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRCollectionViewCell.h; sourceTree = "<group>"; };
 		A45FDDF91E6D3DA100854E2E /* XRCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRCollectionViewCell.m; sourceTree = "<group>"; };
 		A45FDDFA1E6D3DA100854E2E /* XRCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XRCollectionViewCell.xib; sourceTree = "<group>"; };
-		A45FDDFD1E6D3DD600854E2E /* XRImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRImage.h; sourceTree = "<group>"; };
-		A45FDDFE1E6D3DD600854E2E /* XRImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRImage.m; sourceTree = "<group>"; };
 		A45FDE001E6D3DE600854E2E /* XRWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRWaterfallLayout.h; sourceTree = "<group>"; };
 		A45FDE011E6D3DE600854E2E /* XRWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRWaterfallLayout.m; sourceTree = "<group>"; };
-		A45FDE031E6D425000854E2E /* 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1.plist; sourceTree = "<group>"; };
 		A466B15A1E6A61E200D4E5BD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A466B15D1E6A906700D4E5BD /* ProvinceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvinceViewController.h; sourceTree = "<group>"; };
 		A466B15E1E6A906700D4E5BD /* ProvinceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProvinceViewController.m; sourceTree = "<group>"; };
@@ -1245,7 +1243,8 @@
 				A4E113EC1E61828500438E12 /* HomePageViewController.m */,
 				A45FDDF51E6D341400854E2E /* RecommendViewController.h */,
 				A45FDDF61E6D341400854E2E /* RecommendViewController.m */,
-				A45FDE031E6D425000854E2E /* 1.plist */,
+				A44DEE961E8A0BF0001AFE10 /* RapidRegistrationViewController.h */,
+				A44DEE971E8A0BF0001AFE10 /* RapidRegistrationViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1253,8 +1252,6 @@
 		A4E113F01E6182D800438E12 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A45FDDFD1E6D3DD600854E2E /* XRImage.h */,
-				A45FDDFE1E6D3DD600854E2E /* XRImage.m */,
 				A44FF3901E6674570052D0A3 /* TZBorrowInfoModel.h */,
 				A44FF3911E6674570052D0A3 /* TZBorrowInfoModel.m */,
 				A45121B41E67FF29005CC3A4 /* TZBondTransferModel.h */,
@@ -1566,7 +1563,6 @@
 			files = (
 				A44FF39F1E667A700052D0A3 /* TZBorrowInfoCell.xib in Resources */,
 				A4407C761E63CCD30052E144 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
-				A45FDE041E6D425000854E2E /* 1.plist in Resources */,
 				A44FF37E1E666B1C0052D0A3 /* pic_loading_5.png in Resources */,
 				A45FDDFC1E6D3DA100854E2E /* XRCollectionViewCell.xib in Resources */,
 				A45BF2981E601BC900266FA8 /* LaunchScreen.storyboard in Resources */,
@@ -1676,10 +1672,10 @@
 				A4E1144D1E618B8800438E12 /* UIImage+WebP.m in Sources */,
 				A4E114491E618B8800438E12 /* SDWebImagePrefetcher.m in Sources */,
 				A4E1143C1E618B8800438E12 /* SDImageCache.m in Sources */,
+				A44DEE981E8A0BF0001AFE10 /* RapidRegistrationViewController.m in Sources */,
 				A44E0D8C1E6412D9007818FC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				A4E113DB1E61779500438E12 /* TZRootViewController.m in Sources */,
 				A44E0DCB1E6412EA007818FC /* MJRefreshStateHeader.m in Sources */,
-				A45FDDFF1E6D3DD600854E2E /* XRImage.m in Sources */,
 				A45BF28A1E601BC900266FA8 /* main.m in Sources */,
 				A44FF3BA1E66A61B0052D0A3 /* MJFoundation.m in Sources */,
 				A4E114441E618B8800438E12 /* SDWebImageCompat.m in Sources */,
