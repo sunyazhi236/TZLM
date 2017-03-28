@@ -35,7 +35,7 @@
     FBDKlabel.textAlignment = NSTextAlignmentCenter;
     [bgView addSubview:FBDKlabel];
     //12  16   288 205
-    UIImageView *imgV=[[UIImageView alloc]initWithFrame:CGRectMake(kScreenW/2-kAutoWEX(26), kAutoHEX(50), kAutoWEX(26), kAutoHEX(50))];
+    UIImageView *imgV=[[UIImageView alloc]initWithFrame:CGRectMake(kScreenW/2-kAutoWEX(26), 0, kAutoWEX(26), kAutoHEX(50))];
     imgV.image = [UIImage imageNamed:@"jisuzhuceArrow"];
     [bgView addSubview:imgV];
     
