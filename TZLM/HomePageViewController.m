@@ -57,7 +57,6 @@
             vc5.title = @"头条号";
             [tabbar addSubItemWithViewController:vc5];
             
-            
             tabbar;
         });
     }
@@ -91,6 +90,7 @@
     _customSearchBar.showsCancelButton = NO;
     _customSearchBar.searchBarStyle = UIBarMetricsDefault;
     _customSearchBar.keyboardType = UIKeyboardTypeDefault;
+    _customSearchBar.returnKeyType = UIReturnKeySearch;
     [app.viewController.navigationController.navigationBar addSubview:_customSearchBar];
     
     //城市定位功能

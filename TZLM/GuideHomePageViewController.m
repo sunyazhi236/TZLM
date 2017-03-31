@@ -95,6 +95,7 @@
     customSearchBar.showsCancelButton = NO;
     customSearchBar.searchBarStyle = UIBarMetricsDefault;
     customSearchBar.keyboardType = UIKeyboardTypeDefault;
+    customSearchBar.returnKeyType = UIReturnKeySearch;
     [app.viewController.navigationController.navigationBar addSubview:customSearchBar];
     
     

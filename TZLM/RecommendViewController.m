@@ -192,6 +192,7 @@ static NSString *const JDXXCell = @"TZBorrowInfoCell";
     NSDictionary *dic=@{@"cc_area":@"邢台"};
     NSMutableDictionary *dict=[NSMutableDictionary dictionaryWithDictionary:dic];
     [WMHttpTool get:kCity_Index params:dict success:^(id responseObj) {
+        NSLog(@"++++%@",responseObj);
         self.InfoListArray = responseObj;
         self.JDXXDict = [self.InfoListArray objectAtIndex:0];//借贷信息
         self.JDXXArray = [self.JDXXDict objectForKey:@"jdxx"];

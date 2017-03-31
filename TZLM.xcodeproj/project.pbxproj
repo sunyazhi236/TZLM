@@ -188,6 +188,7 @@
 		A4E1144E1E618B8800438E12 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E114351E618B8800438E12 /* UIImageView+HighlightedWebCache.m */; };
 		A4E1144F1E618B8800438E12 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E114371E618B8800438E12 /* UIImageView+WebCache.m */; };
 		A4E114501E618B8800438E12 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E114391E618B8800438E12 /* UIView+WebCacheOperation.m */; };
+		A4ED14141E8B9E57003C76ED /* PublishLoanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ED14131E8B9E57003C76ED /* PublishLoanViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -540,6 +541,8 @@
 		A4E114371E618B8800438E12 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		A4E114381E618B8800438E12 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		A4E114391E618B8800438E12 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		A4ED14121E8B9E57003C76ED /* PublishLoanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishLoanViewController.h; sourceTree = "<group>"; };
+		A4ED14131E8B9E57003C76ED /* PublishLoanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishLoanViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1245,6 +1248,8 @@
 				A45FDDF61E6D341400854E2E /* RecommendViewController.m */,
 				A44DEE961E8A0BF0001AFE10 /* RapidRegistrationViewController.h */,
 				A44DEE971E8A0BF0001AFE10 /* RapidRegistrationViewController.m */,
+				A4ED14121E8B9E57003C76ED /* PublishLoanViewController.h */,
+				A4ED14131E8B9E57003C76ED /* PublishLoanViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1677,6 +1682,7 @@
 				A4E113DB1E61779500438E12 /* TZRootViewController.m in Sources */,
 				A44E0DCB1E6412EA007818FC /* MJRefreshStateHeader.m in Sources */,
 				A45BF28A1E601BC900266FA8 /* main.m in Sources */,
+				A4ED14141E8B9E57003C76ED /* PublishLoanViewController.m in Sources */,
 				A44FF3BA1E66A61B0052D0A3 /* MJFoundation.m in Sources */,
 				A4E114441E618B8800438E12 /* SDWebImageCompat.m in Sources */,
 				A4E113D11E61568100438E12 /* RDVTabBar.m in Sources */,
