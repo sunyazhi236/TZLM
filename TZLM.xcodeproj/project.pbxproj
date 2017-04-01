@@ -152,6 +152,7 @@
 		A466B15F1E6A906700D4E5BD /* ProvinceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A466B15E1E6A906700D4E5BD /* ProvinceViewController.m */; };
 		A466B1651E6AA53000D4E5BD /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A466B1641E6AA53000D4E5BD /* CityViewController.m */; };
 		A4691AED1E70F765000C24C3 /* UIFontAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A4691AEC1E70F765000C24C3 /* UIFontAddition.m */; };
+		A49321181E8E32AB00B261F3 /* FinancialFirmsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A49321171E8E32AB00B261F3 /* FinancialFirmsViewController.m */; };
 		A4E113D11E61568100438E12 /* RDVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E113CC1E61568100438E12 /* RDVTabBar.m */; };
 		A4E113D21E61568100438E12 /* RDVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E113CE1E61568100438E12 /* RDVTabBarController.m */; };
 		A4E113D31E61568100438E12 /* RDVTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E113D01E61568100438E12 /* RDVTabBarItem.m */; };
@@ -473,6 +474,8 @@
 		A466B1641E6AA53000D4E5BD /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
 		A4691AEB1E70F765000C24C3 /* UIFontAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFontAddition.h; sourceTree = "<group>"; };
 		A4691AEC1E70F765000C24C3 /* UIFontAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFontAddition.m; sourceTree = "<group>"; };
+		A49321161E8E32AB00B261F3 /* FinancialFirmsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialFirmsViewController.h; sourceTree = "<group>"; };
+		A49321171E8E32AB00B261F3 /* FinancialFirmsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialFirmsViewController.m; sourceTree = "<group>"; };
 		A4E113CB1E61568100438E12 /* RDVTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBar.h; sourceTree = "<group>"; };
 		A4E113CC1E61568100438E12 /* RDVTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBar.m; sourceTree = "<group>"; };
 		A4E113CD1E61568100438E12 /* RDVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarController.h; sourceTree = "<group>"; };
@@ -1151,6 +1154,28 @@
 			name = Category;
 			sourceTree = "<group>";
 		};
+		A49321141E8E326E00B261F3 /* 借贷信息 */ = {
+			isa = PBXGroup;
+			children = (
+				A45FDDF51E6D341400854E2E /* RecommendViewController.h */,
+				A45FDDF61E6D341400854E2E /* RecommendViewController.m */,
+				A44DEE961E8A0BF0001AFE10 /* RapidRegistrationViewController.h */,
+				A44DEE971E8A0BF0001AFE10 /* RapidRegistrationViewController.m */,
+				A4ED14121E8B9E57003C76ED /* PublishLoanViewController.h */,
+				A4ED14131E8B9E57003C76ED /* PublishLoanViewController.m */,
+			);
+			name = "借贷信息";
+			sourceTree = "<group>";
+		};
+		A49321151E8E328000B261F3 /* 金融公司 */ = {
+			isa = PBXGroup;
+			children = (
+				A49321161E8E32AB00B261F3 /* FinancialFirmsViewController.h */,
+				A49321171E8E32AB00B261F3 /* FinancialFirmsViewController.m */,
+			);
+			name = "金融公司";
+			sourceTree = "<group>";
+		};
 		A4E113C91E61564E00438E12 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -1244,12 +1269,8 @@
 				A45B533C1E6FDC8000E46318 /* GuideHomePageViewController.m */,
 				A4E113EB1E61828500438E12 /* HomePageViewController.h */,
 				A4E113EC1E61828500438E12 /* HomePageViewController.m */,
-				A45FDDF51E6D341400854E2E /* RecommendViewController.h */,
-				A45FDDF61E6D341400854E2E /* RecommendViewController.m */,
-				A44DEE961E8A0BF0001AFE10 /* RapidRegistrationViewController.h */,
-				A44DEE971E8A0BF0001AFE10 /* RapidRegistrationViewController.m */,
-				A4ED14121E8B9E57003C76ED /* PublishLoanViewController.h */,
-				A4ED14131E8B9E57003C76ED /* PublishLoanViewController.m */,
+				A49321141E8E326E00B261F3 /* 借贷信息 */,
+				A49321151E8E328000B261F3 /* 金融公司 */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1657,6 +1678,7 @@
 				A44E0DC31E6412EA007818FC /* MJRefreshAutoGifFooter.m in Sources */,
 				A45121BA1E680594005CC3A4 /* TZBondTransferCell.m in Sources */,
 				A44E0DCF1E6412EA007818FC /* UIScrollView+MJExtension.m in Sources */,
+				A49321181E8E32AB00B261F3 /* FinancialFirmsViewController.m in Sources */,
 				A44E0DBF1E6412EA007818FC /* MJRefreshBackFooter.m in Sources */,
 				A4E1144C1E618B8800438E12 /* UIImage+MultiFormat.m in Sources */,
 				A4E113FC1E61857E00438E12 /* QueryInfoViewController.m in Sources */,

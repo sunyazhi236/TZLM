@@ -105,6 +105,14 @@ static CGFloat const topBarHeight = 30; //顶部标签条的高度
     }
     
     [self itemSelectedIndex:0];//
+    
+    NSUserDefaults *userdefault=[NSUserDefaults standardUserDefaults];
+    NSString *jrgs=[userdefault objectForKey:@"JRGS"];
+    if (jrgs) {
+        self.contentView.contentOffset = CGPointMake(2 * self.bounds.size.width, 0);
+        [userdefault removeObjectForKey:@"JRGS"];
+        [userdefault synchronize];//不要忘了同步～～
+    }
 }
 
 #pragma mark - ************************* 代理方法 *************************
@@ -151,8 +159,8 @@ static CGFloat const topBarHeight = 30; //顶部标签条的高度
     selectedBtn.selected = YES;
     
     [UIView animateWithDuration:0.25 animations:^{
-        preSelectedBtn.titleLabel.font = [UIFont systemFontOfSize_5:12];
-        selectedBtn.titleLabel.font = [UIFont systemFontOfSize_5:12];
+        preSelectedBtn.titleLabel.font = [UIFont systemFontOfSize_5:16];
+        selectedBtn.titleLabel.font = [UIFont systemFontOfSize_5:16];
         
         UIButton * btn = self.titles[self.selectedIndex];
         // 计算偏移量
@@ -181,7 +189,7 @@ static CGFloat const topBarHeight = 30; //顶部标签条的高度
     UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.tabbar addSubview:btn];
     [self.titles addObject:btn];
-    btn.titleLabel.font = [UIFont systemFontOfSize_5:12];
+    btn.titleLabel.font = [UIFont systemFontOfSize_5:16];
     [self setupBtn:btn withTitle:viewController.title];
     [btn addTarget:self action:@selector(itemSelected:) forControlEvents:UIControlEventTouchUpInside];
     [self.subViewControllers addObject:viewController];
@@ -193,7 +201,7 @@ static CGFloat const topBarHeight = 30; //顶部标签条的高度
     [btn setTitle:title forState:UIControlStateNormal];
     [btn sizeToFit];
     _tabbarWidth += btn.frame.size.width + topBarItemMargin;
-    btn.titleLabel.font = [UIFont systemFontOfSize_5:12];
+    btn.titleLabel.font = [UIFont systemFontOfSize_5:16];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
     

@@ -11,6 +11,7 @@
 #import "RecommendViewController.h"
 #import "ProvinceViewController.h"
 #import "CityViewController.h"
+#import "FinancialFirmsViewController.h"
 
 @interface HomePageViewController ()<CLLocationManagerDelegate,UISearchBarDelegate>{
      UIButton *button;
@@ -19,7 +20,7 @@
 @property (nonatomic,strong) HYTabbarView * tabbarView;
 @property (nonatomic,strong) CLLocationManager *locationManager;
 @property(nonatomic,strong) UISearchBar *customSearchBar;
-@property(nonatomic,strong)UIButton *FBBtn;
+@property(nonatomic,strong) UIButton *FBBtn;
 @end
 
 @implementation HomePageViewController
@@ -41,7 +42,7 @@
             vc1.title = @"债券转让";
             [tabbar addSubItemWithViewController:vc1];
             
-            BorrowInfoViewController * vc2 = [[BorrowInfoViewController alloc]init];
+            FinancialFirmsViewController * vc2 = [[FinancialFirmsViewController alloc]init];
             vc2.title = @"金融公司";
             [tabbar addSubItemWithViewController:vc2];
             
