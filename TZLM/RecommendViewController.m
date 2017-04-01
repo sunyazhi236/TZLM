@@ -83,7 +83,7 @@ static NSString *const JDXXCell = @"TZBorrowInfoCell";
     }
     
     
-    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, kAutoHEX(90), kScreenW*3, kScreenH-20-44-kAutoHEX(30)-kAutoHEX(90))];
+    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, kAutoHEX(90), kScreenW*3, kScreenH-20-44-kAutoHEX(30)-kAutoHEX(80))];
     self.scrollView.contentSize = CGSizeMake(kScreenW*3, 0);
     [self.view addSubview:_scrollView];
     //全部信息
@@ -114,10 +114,8 @@ static NSString *const JDXXCell = @"TZBorrowInfoCell";
         
 //        _page = 0;
         
-        NSLog(@"++++%@",self.JDXXArray);
         self.JDXXArray =[NSMutableArray arrayWithArray:_JDXXArray];
         [self.JDXXArray removeAllObjects];
-          NSLog(@"++++%@",self.JDXXArray);
         // 请求数据
         [CFProgressHUD showLoadingWithView:self.view];
         [self requestBorrow];
@@ -142,8 +140,6 @@ static NSString *const JDXXCell = @"TZBorrowInfoCell";
         
         //        _page = 0;
         
-        NSLog(@"++++%@",self.JDXXArray);
-        //        [self.JDXXArray removeAllObjects];
         // 请求数据
         [CFProgressHUD showLoadingWithView:self.view];
         [self requestBorrow];
@@ -166,8 +162,7 @@ static NSString *const JDXXCell = @"TZBorrowInfoCell";
     MJRefreshNormalHeader * header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         
         //        _page = 0;
-        
-        NSLog(@"++++%@",self.JDXXArray);
+
         //        [self.JDXXArray removeAllObjects];
         // 请求数据
         [CFProgressHUD showLoadingWithView:self.view];
@@ -192,7 +187,7 @@ static NSString *const JDXXCell = @"TZBorrowInfoCell";
     NSDictionary *dic=@{@"cc_area":@"邢台"};
     NSMutableDictionary *dict=[NSMutableDictionary dictionaryWithDictionary:dic];
     [WMHttpTool get:kCity_Index params:dict success:^(id responseObj) {
-        NSLog(@"++++%@",responseObj);
+        [CFProgressHUD hideHUDForView:self.view];
         self.InfoListArray = responseObj;
         self.JDXXDict = [self.InfoListArray objectAtIndex:0];//借贷信息
         self.JDXXArray = [self.JDXXDict objectForKey:@"jdxx"];
@@ -217,7 +212,7 @@ static NSString *const JDXXCell = @"TZBorrowInfoCell";
         [_JKtableView.mj_header endRefreshing];
         [_JKtableView.mj_footer endRefreshing];
         
-        [CFProgressHUD hideHUDForView:self.view];
+
     } failure:^(NSError *error) {
         [CFProgressHUD hideHUDForView:self.view];
     }];
@@ -264,7 +259,7 @@ static NSString *const JDXXCell = @"TZBorrowInfoCell";
   
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 8;
+    return kAutoHEX(8);
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, 8)];
@@ -283,11 +278,9 @@ static NSString *const JDXXCell = @"TZBorrowInfoCell";
     TZBorrowInfoCell *cell=[tableView dequeueReusableCellWithIdentifier:JDXXCell];
     
     UIView *view = [[UIView alloc ]initWithFrame:CGRectMake(0, 0, kScreenW, 10)];
-                    
     view.backgroundColor = [UIColor colorWithRed:74.0/255 green:56.0/255 blue:58.0/255 alpha:1.0];
-                    
     [cell.contentView addSubview:view];
-                    
+    
     if ([tableView isEqual:_tableView]) {
         if (cell==nil) {
             cell=[[[NSBundle mainBundle]loadNibNamed:JDXXCell owner:self options:nil]lastObject];

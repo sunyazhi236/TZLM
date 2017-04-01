@@ -97,6 +97,7 @@
     _textView.layer.borderColor = RGBColor(233, 233, 233).CGColor;
     _textView.layer.masksToBounds = YES;
     _textView.delegate = self;
+    [_textView setFont:[UIFont systemFontOfSize_5:15]];
     [sencondBGV addSubview:_textView];
     
     textViewPlaceholderLabel = [[UILabel alloc] initWithFrame:CGRectMake(kAutoWEX(15), kAutoHEX(10), kAutoWEX(100), kAutoHEX(25))];
@@ -128,7 +129,6 @@
 }
 
 -(void)ClickPublic:(UIButton*)sender{
-    NSLog(@"+++++%@",button0.currentTitle);
     if ([button0.currentTitle isEqualToString:@"我的身份"] ||[button0.currentTitle isEqualToString:@""]||button0 == nil) {
         UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"请选择身份" message:nil preferredStyle:UIAlertControllerStyleAlert];
         [alertC addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleCancel handler:nil]];
@@ -174,7 +174,7 @@
     
 
     UIButton *finishBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    finishBtn.frame = CGRectMake(kAutoWEX(kScreenW-60), kAutoHEX(2), kAutoWEX(50), kAutoHEX(25));
+    finishBtn.frame = CGRectMake(kAutoWEX(260), kAutoHEX(2), kAutoWEX(50), kAutoHEX(25));
     [finishBtn setTitle:@"完成" forState:UIControlStateNormal];
     [finishBtn.titleLabel setFont:[UIFont systemFontOfSize_5:16]];
     [finishBtn setTitleColor:RGBColor(24, 173, 229) forState:UIControlStateNormal];

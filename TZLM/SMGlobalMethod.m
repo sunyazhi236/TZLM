@@ -352,7 +352,7 @@
 //昵称
 + (BOOL) validateNickname:(NSString *)nickname
 {
-    NSString *nicknameRegex = @"^[\u4e00-\u9fa5]{4,8}$";
+    NSString *nicknameRegex = @"^[A-Za-z0-9_\u4e00-\u9fa5]{4,8}$";
     NSPredicate *passWordPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",nicknameRegex];
     return [passWordPredicate evaluateWithObject:nickname];
 }

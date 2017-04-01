@@ -8,6 +8,7 @@
 
 #import "RapidRegistrationViewController.h"
 #import "PublishLoanViewController.h"
+#import "SMGlobalMethod.h"
 
 @interface RapidRegistrationViewController (){
     UITextField *_nameTF;
@@ -136,9 +137,24 @@
 }
 
 -(void)ClickSubmitVBtn:(UIButton*)sender{
+   if (![SMGlobalMethod validateNickname:_nameTF.text]) {
+        UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:@"请输入4~8位姓名" preferredStyle:UIAlertControllerStyleAlert];
+        [alertC addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alertC animated:YES completion:nil];
+   }else if (_moneyTF.text.length == 0){
+       UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:@"请输入金额" preferredStyle:UIAlertControllerStyleAlert];
+       [alertC addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil]];
+       [self presentViewController:alertC animated:YES completion:nil];
+   }else if (![SMGlobalMethod validateMobile:_phoneTF.text]){
+       UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:@"请输入正确手机号码" preferredStyle:UIAlertControllerStyleAlert];
+       [alertC addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil]];
+       [self presentViewController:alertC animated:YES completion:nil];
+   }
+    
+    else{
     PublishLoanViewController *pubLoanV = [[PublishLoanViewController alloc]init];
     [self.navigationController pushViewController:pubLoanV animated:YES];
-    
+    }
 }
 
 -(void)didClickManBtn:(UIButton*)sender{

@@ -283,7 +283,6 @@
     NSUserDefaults *userdefault=[NSUserDefaults standardUserDefaults];
     [userdefault setObject:@"jrgs" forKey:@"JRGS"];
     [userdefault synchronize];
-    
     HomePageViewController *home=[[HomePageViewController alloc]init];
     [self.navigationController pushViewController:home animated:YES];
 }
