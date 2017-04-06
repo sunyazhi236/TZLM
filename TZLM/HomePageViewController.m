@@ -13,6 +13,8 @@
 #import "CityViewController.h"
 #import "FinancialFirmsViewController.h"
 #import "DebentureTransferViewController.h"
+#import "NetCreditViewController.h"
+#import "AllianceViewController.h"
 
 
 @interface HomePageViewController ()<CLLocationManagerDelegate,UISearchBarDelegate>{
@@ -48,11 +50,11 @@
             vc2.title = @"金融公司";
             [tabbar addSubItemWithViewController:vc2];
             
-            BorrowInfoViewController * vc3 = [[BorrowInfoViewController alloc]init];
+            NetCreditViewController * vc3 = [[NetCreditViewController alloc]init];
             vc3.title = @"网贷口子";
             [tabbar addSubItemWithViewController:vc3];
             
-            BorrowInfoViewController * vc4 = [[BorrowInfoViewController alloc]init];
+            AllianceViewController * vc4 = [[AllianceViewController alloc]init];
             vc4.title = @"质押联盟";
             [tabbar addSubItemWithViewController:vc4];
             

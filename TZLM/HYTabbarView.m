@@ -119,6 +119,18 @@ static CGFloat const topBarHeight = 30; //顶部标签条的高度
         [userdefault removeObjectForKey:@"ZZZR"];
         [userdefault synchronize];//不要忘了同步～～
     }
+    NSString *wdkz=[userdefault objectForKey:@"WDKZ"];
+    if (wdkz) {
+        self.contentView.contentOffset = CGPointMake(3 * self.bounds.size.width, 0);
+        [userdefault removeObjectForKey:@"WDKZ"];
+        [userdefault synchronize];//不要忘了同步～～
+    }
+    NSString *zylm=[userdefault objectForKey:@"ZYLM"];
+    if (zylm) {
+        self.contentView.contentOffset = CGPointMake(4 * self.bounds.size.width, 0);
+        [userdefault removeObjectForKey:@"ZYLM"];
+        [userdefault synchronize];//不要忘了同步～～
+    }
 }
 
 #pragma mark - ************************* 代理方法 *************************

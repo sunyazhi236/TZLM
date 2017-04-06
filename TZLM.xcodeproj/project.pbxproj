@@ -164,6 +164,13 @@
 		A4AB9CF11E95D4A600723904 /* NetCreditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB9CF01E95D4A600723904 /* NetCreditViewController.m */; };
 		A4AB9CF51E95D4C000723904 /* NetCreditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB9CF31E95D4C000723904 /* NetCreditCell.m */; };
 		A4AB9CF61E95D4C000723904 /* NetCreditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4AB9CF41E95D4C000723904 /* NetCreditCell.xib */; };
+		A4AB9CFB1E95E0D500723904 /* AllianceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB9CFA1E95E0D500723904 /* AllianceViewController.m */; };
+		A4AB9CFF1E961ABC00723904 /* AllianceThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB9CFD1E961ABC00723904 /* AllianceThreeCell.m */; };
+		A4AB9D001E961ABC00723904 /* AllianceThreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4AB9CFE1E961ABC00723904 /* AllianceThreeCell.xib */; };
+		A4AB9D041E961AD200723904 /* AllianceOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB9D021E961AD200723904 /* AllianceOneCell.m */; };
+		A4AB9D051E961AD200723904 /* AllianceOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4AB9D031E961AD200723904 /* AllianceOneCell.xib */; };
+		A4AB9D091E961AE600723904 /* AllianceNOCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB9D071E961AE600723904 /* AllianceNOCell.m */; };
+		A4AB9D0A1E961AE600723904 /* AllianceNOCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4AB9D081E961AE600723904 /* AllianceNOCell.xib */; };
 		A4E113D11E61568100438E12 /* RDVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E113CC1E61568100438E12 /* RDVTabBar.m */; };
 		A4E113D21E61568100438E12 /* RDVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E113CE1E61568100438E12 /* RDVTabBarController.m */; };
 		A4E113D31E61568100438E12 /* RDVTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E113D01E61568100438E12 /* RDVTabBarItem.m */; };
@@ -505,6 +512,17 @@
 		A4AB9CF21E95D4C000723904 /* NetCreditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetCreditCell.h; sourceTree = "<group>"; };
 		A4AB9CF31E95D4C000723904 /* NetCreditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetCreditCell.m; sourceTree = "<group>"; };
 		A4AB9CF41E95D4C000723904 /* NetCreditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetCreditCell.xib; sourceTree = "<group>"; };
+		A4AB9CF91E95E0D500723904 /* AllianceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllianceViewController.h; sourceTree = "<group>"; };
+		A4AB9CFA1E95E0D500723904 /* AllianceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllianceViewController.m; sourceTree = "<group>"; };
+		A4AB9CFC1E961ABC00723904 /* AllianceThreeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllianceThreeCell.h; sourceTree = "<group>"; };
+		A4AB9CFD1E961ABC00723904 /* AllianceThreeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllianceThreeCell.m; sourceTree = "<group>"; };
+		A4AB9CFE1E961ABC00723904 /* AllianceThreeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllianceThreeCell.xib; sourceTree = "<group>"; };
+		A4AB9D011E961AD200723904 /* AllianceOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllianceOneCell.h; sourceTree = "<group>"; };
+		A4AB9D021E961AD200723904 /* AllianceOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllianceOneCell.m; sourceTree = "<group>"; };
+		A4AB9D031E961AD200723904 /* AllianceOneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllianceOneCell.xib; sourceTree = "<group>"; };
+		A4AB9D061E961AE600723904 /* AllianceNOCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllianceNOCell.h; sourceTree = "<group>"; };
+		A4AB9D071E961AE600723904 /* AllianceNOCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllianceNOCell.m; sourceTree = "<group>"; };
+		A4AB9D081E961AE600723904 /* AllianceNOCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllianceNOCell.xib; sourceTree = "<group>"; };
 		A4E113CB1E61568100438E12 /* RDVTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBar.h; sourceTree = "<group>"; };
 		A4E113CC1E61568100438E12 /* RDVTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBar.m; sourceTree = "<group>"; };
 		A4E113CD1E61568100438E12 /* RDVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarController.h; sourceTree = "<group>"; };
@@ -1271,6 +1289,31 @@
 			name = "网贷口子";
 			sourceTree = "<group>";
 		};
+		A4AB9CF71E95DFD200723904 /* 质押联盟 */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB9CF91E95E0D500723904 /* AllianceViewController.h */,
+				A4AB9CFA1E95E0D500723904 /* AllianceViewController.m */,
+			);
+			name = "质押联盟";
+			sourceTree = "<group>";
+		};
+		A4AB9CF81E95DFE700723904 /* 质押联盟 */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB9CFC1E961ABC00723904 /* AllianceThreeCell.h */,
+				A4AB9CFD1E961ABC00723904 /* AllianceThreeCell.m */,
+				A4AB9CFE1E961ABC00723904 /* AllianceThreeCell.xib */,
+				A4AB9D011E961AD200723904 /* AllianceOneCell.h */,
+				A4AB9D021E961AD200723904 /* AllianceOneCell.m */,
+				A4AB9D031E961AD200723904 /* AllianceOneCell.xib */,
+				A4AB9D061E961AE600723904 /* AllianceNOCell.h */,
+				A4AB9D071E961AE600723904 /* AllianceNOCell.m */,
+				A4AB9D081E961AE600723904 /* AllianceNOCell.xib */,
+			);
+			name = "质押联盟";
+			sourceTree = "<group>";
+		};
 		A4E113C91E61564E00438E12 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -1368,6 +1411,7 @@
 				A49321151E8E328000B261F3 /* 金融公司 */,
 				A47B5CA21E9246BE003AD64B /* 债券转让 */,
 				A4AB9CEE1E95D46A00723904 /* 网贷口子 */,
+				A4AB9CF71E95DFD200723904 /* 质押联盟 */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1392,6 +1436,7 @@
 				A47B5CA41E92473A003AD64B /* 金融公司 */,
 				A47B5CA51E924759003AD64B /* 债券转让 */,
 				A4AB9CED1E95D44E00723904 /* 网贷口子 */,
+				A4AB9CF81E95DFE700723904 /* 质押联盟 */,
 				A45FDDF81E6D3DA100854E2E /* XRCollectionViewCell.h */,
 				A45FDDF91E6D3DA100854E2E /* XRCollectionViewCell.m */,
 				A45FDDFA1E6D3DA100854E2E /* XRCollectionViewCell.xib */,
@@ -1700,16 +1745,19 @@
 				A4AB9CF61E95D4C000723904 /* NetCreditCell.xib in Resources */,
 				A44FF37C1E666B170052D0A3 /* pic_loading_4.png in Resources */,
 				A4E1143F1E618B8800438E12 /* lk_click_image@3x.png in Resources */,
+				A4AB9D001E961ABC00723904 /* AllianceThreeCell.xib in Resources */,
 				A4E1143E1E618B8800438E12 /* lk_click_image@2x.png in Resources */,
 				A44E0D841E6412D9007818FC /* Info.plist in Resources */,
 				A44FF3841E666B2A0052D0A3 /* pic_loading_8.png in Resources */,
 				A45BF2951E601BC900266FA8 /* Assets.xcassets in Resources */,
 				A44FF3801E666B210052D0A3 /* pic_loading_6.png in Resources */,
+				A4AB9D0A1E961AE600723904 /* AllianceNOCell.xib in Resources */,
 				A49A41FD1E948FF6009AE290 /* ThreeImgCell.xib in Resources */,
 				A4407C781E63CCD30052E144 /* WeiboSDK.bundle in Resources */,
 				A418592F1E651FCF00DA8F68 /* banner2.png in Resources */,
 				A4407C7D1E63CCD30052E144 /* ShareSDK.bundle in Resources */,
 				A41859311E651FCF00DA8F68 /* banner1.png in Resources */,
+				A4AB9D051E961AD200723904 /* AllianceOneCell.xib in Resources */,
 				A49A41F51E948B3C009AE290 /* TZFinancialAdvisorCell.xib in Resources */,
 				A4407C6B1E63CCD30052E144 /* ShareSDKUI.bundle in Resources */,
 				A4407C681E63CCD30052E144 /* ShareSDKConfigFile.bundle in Resources */,
@@ -1749,6 +1797,7 @@
 				A4691AED1E70F765000C24C3 /* UIFontAddition.m in Sources */,
 				A4E1144B1E618B8800438E12 /* UIImage+GIF.m in Sources */,
 				A44FF3BF1E66A61B0052D0A3 /* MJTypeEncoding.m in Sources */,
+				A4AB9D091E961AE600723904 /* AllianceNOCell.m in Sources */,
 				A4E114481E618B8800438E12 /* SDWebImageManager.m in Sources */,
 				A44FF3BB1E66A61B0052D0A3 /* MJIvar.m in Sources */,
 				A4E1144F1E618B8800438E12 /* UIImageView+WebCache.m in Sources */,
@@ -1757,6 +1806,7 @@
 				A49A41F81E948EB6009AE290 /* DebentureTransferViewController.m in Sources */,
 				A44E0D891E6412D9007818FC /* MASViewAttribute.m in Sources */,
 				A466B1651E6AA53000D4E5BD /* CityViewController.m in Sources */,
+				A4AB9CFB1E95E0D500723904 /* AllianceViewController.m in Sources */,
 				A44E0DC91E6412EA007818FC /* MJRefreshGifHeader.m in Sources */,
 				A41859481E65598000DA8F68 /* UIView+SDExtension.m in Sources */,
 				A4E114471E618B8800438E12 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -1788,6 +1838,7 @@
 				A4E113E41E617BCD00438E12 /* MSAlertController.m in Sources */,
 				A44FF3721E66684E0052D0A3 /* CFLoadingView.m in Sources */,
 				A4E114501E618B8800438E12 /* UIView+WebCacheOperation.m in Sources */,
+				A4AB9D041E961AD200723904 /* AllianceOneCell.m in Sources */,
 				A44FF3741E66684E0052D0A3 /* UIView+MJExtension.m in Sources */,
 				A45FDDF71E6D341400854E2E /* RecommendViewController.m in Sources */,
 				A44FF3C01E66A61B0052D0A3 /* NSObject+MJCoding.m in Sources */,
@@ -1805,6 +1856,7 @@
 				A4E113DB1E61779500438E12 /* TZRootViewController.m in Sources */,
 				A44E0DCB1E6412EA007818FC /* MJRefreshStateHeader.m in Sources */,
 				A45BF28A1E601BC900266FA8 /* main.m in Sources */,
+				A4AB9CFF1E961ABC00723904 /* AllianceThreeCell.m in Sources */,
 				A4ED14141E8B9E57003C76ED /* PublishLoanViewController.m in Sources */,
 				A44FF3BA1E66A61B0052D0A3 /* MJFoundation.m in Sources */,
 				A4AB9CF11E95D4A600723904 /* NetCreditViewController.m in Sources */,

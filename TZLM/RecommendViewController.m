@@ -83,8 +83,9 @@ static NSString *const JDXXCell = @"TZBorrowInfoCell";
     }
     
     
-    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, kAutoHEX(90), kScreenW*3, kScreenH-20-44-kAutoHEX(30)-kAutoHEX(80))];
+    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, kAutoHEX(90), kScreenW, kScreenH-20-44-kAutoHEX(30)-kAutoHEX(80))];
     self.scrollView.contentSize = CGSizeMake(kScreenW*3, 0);
+    _scrollView.scrollEnabled = NO;
     [self.view addSubview:_scrollView];
     //全部信息
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, _scrollView.frame.size.height)];

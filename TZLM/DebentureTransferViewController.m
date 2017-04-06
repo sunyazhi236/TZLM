@@ -64,8 +64,9 @@ static NSString *const NoCell = @"NOImgCell";
     qtzqLabel.textColor  = [UIColor blackColor];
     [bgView addSubview:qtzqLabel];
     
-    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, bgView.frame.size.height, kScreenW*2, kScreenH-20-44-(bgView.frame.size.height+kAutoHEX(30)))];
+    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, bgView.frame.size.height, kScreenW, kScreenH-20-44-(bgView.frame.size.height+kAutoHEX(30)))];
     _scrollView.contentSize = CGSizeMake(kScreenW*2, 0);
+    _scrollView.scrollEnabled = NO;
     [self.view addSubview:_scrollView];
     
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, _scrollView.frame.size.height)];
