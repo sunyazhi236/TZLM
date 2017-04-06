@@ -1,28 +1,31 @@
 //
-//  FinancialFirmsViewController.m
+//  DebentureTransferViewController.m
 //  TZLM
 //
-//  Created by  sun on 2017/3/31.
+//  Created by  sun on 2017/4/5.
 //  Copyright © 2017年 上海询通商务咨询有限公司. All rights reserved.
 //
 
-#import "FinancialFirmsViewController.h"
-#import "TZBondTransferCell.h"
-#import "TZFinancialAdvisorCell.h"
+#import "DebentureTransferViewController.h"
+#import "ThreeImgCell.h"
+#import "OneImgCell.h"
+#import "NOImgCell.h"
 
-@interface FinancialFirmsViewController ()<UITableViewDelegate,UITableViewDataSource>{
-        UITableView *_tableView;//金融公司 tableView
-        UITableView *_tableView2;  //金融顾问 tableView
-        UIScrollView *_scrollView; //金融公司 金融顾问 scrollView
-        UILabel *jrgsLabel;
-        UILabel *jrgwLabel;
+
+@interface DebentureTransferViewController ()<UITableViewDelegate,UITableViewDataSource>{
+    UILabel *dycLabel;
+    UILabel *qtzqLabel;
+    UIScrollView *_scrollView; //抵押车转让  其他债权转让 scrollView
+    UITableView *_tableView;//抵押车 tableView
+    UITableView *_tableView2;  //其他债权转让 tableView
 }
 
 @end
 
-@implementation FinancialFirmsViewController
-static NSString *const JRGSCell = @"TZBondTransferCell";
-static NSString *const JRGWCell = @"TZFinancialAdvisorCell";
+@implementation DebentureTransferViewController
+static NSString *const ThreeCell = @"ThreeImgCell";
+static NSString *const OneCell = @"OneImgCell";
+static NSString *const NoCell = @"NOImgCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,33 +36,33 @@ static NSString *const JRGWCell = @"TZFinancialAdvisorCell";
     bgView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:bgView];
     //金融公司button label
-    UIButton *jrgsBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    jrgsBtn.frame = CGRectMake(kAutoWEX(16), kAutoHEX(7), kAutoWEX(42), kAutoHEX(42));
-    [jrgsBtn setBackgroundImage:[UIImage imageNamed:@"jrgs_01"] forState:UIControlStateNormal];
-    [jrgsBtn addTarget:self action:@selector(ClickJRGSBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [bgView addSubview:jrgsBtn];
-    jrgsLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenW/2, kAutoHEX(55))];
-    jrgsLabel.text = @"         金融公司";
-    jrgsLabel.textAlignment = NSTextAlignmentCenter;
-    [jrgsLabel setFont:[UIFont systemFontOfSize_5:16]];
-    jrgsLabel.textColor  = [UIColor redColor];
-    [bgView addSubview:jrgsLabel];
+    UIButton *dycBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    dycBtn.frame = CGRectMake(kAutoWEX(16), kAutoHEX(7), kAutoWEX(53), kAutoHEX(38));
+    [dycBtn setBackgroundImage:[UIImage imageNamed:@"diyache"] forState:UIControlStateNormal];
+    [dycBtn addTarget:self action:@selector(ClickDDCBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [bgView addSubview:dycBtn];
+    dycLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenW/2, kAutoHEX(55))];
+    dycLabel.text = @"                   抵押车转让";
+    dycLabel.textAlignment = NSTextAlignmentCenter;
+    [dycLabel setFont:[UIFont systemFontOfSize_5:14]];
+    dycLabel.textColor  = [UIColor redColor];
+    [bgView addSubview:dycLabel];
     //中间线
     UIView *LineV =[[UIView alloc]initWithFrame:CGRectMake(kScreenW/2, kAutoHEX(5), 1, kAutoHEX(45))];
     LineV.backgroundColor = RGBColor(202, 202, 202);
     [bgView addSubview:LineV];
     //金融顾问button label
-    UIButton *jrgwBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    jrgwBtn.frame = CGRectMake(kAutoWEX(194), kAutoHEX(7), kAutoWEX(42), kAutoHEX(42));
-    [jrgwBtn setBackgroundImage:[UIImage imageNamed:@"jrgs_02"] forState:UIControlStateNormal];
-    [jrgwBtn addTarget:self action:@selector(ClickJRGWBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [bgView addSubview:jrgwBtn];
-    jrgwLabel = [[UILabel alloc]initWithFrame:CGRectMake(kScreenW/2, 0, kScreenW/2, kAutoHEX(55))];
-    jrgwLabel.text = @"                   金融顾问";
-    jrgwLabel.textAlignment = NSTextAlignmentCenter;
-    [jrgwLabel setFont:[UIFont systemFontOfSize_5:16]];
-    jrgwLabel.textColor  = [UIColor blackColor];
-    [bgView addSubview:jrgwLabel];
+    UIButton *qtzqBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    qtzqBtn.frame = CGRectMake(kAutoWEX(183), kAutoHEX(7), kAutoWEX(42), kAutoHEX(42));
+    [qtzqBtn setBackgroundImage:[UIImage imageNamed:@"qitazhaiquan"] forState:UIControlStateNormal];
+    [qtzqBtn addTarget:self action:@selector(ClickQTZQBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [bgView addSubview:qtzqBtn];
+    qtzqLabel = [[UILabel alloc]initWithFrame:CGRectMake(kScreenW/2, 0, kScreenW/2, kAutoHEX(55))];
+    qtzqLabel.text = @"                 其他债权转让";
+    qtzqLabel.textAlignment = NSTextAlignmentCenter;
+    [qtzqLabel setFont:[UIFont systemFontOfSize_5:14]];
+    qtzqLabel.textColor  = [UIColor blackColor];
+    [bgView addSubview:qtzqLabel];
     
     _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, bgView.frame.size.height, kScreenW*2, kScreenH-20-44-(bgView.frame.size.height+kAutoHEX(30)))];
     _scrollView.contentSize = CGSizeMake(kScreenW*2, 0);
@@ -74,25 +77,8 @@ static NSString *const JRGWCell = @"TZFinancialAdvisorCell";
     _tableView2.delegate = self;
     _tableView2.dataSource = self;
     [_scrollView addSubview:_tableView2];
-    [self addTableRefresh];
+     [self addTableRefresh];
 }
-
--(void)ClickJRGSBtn:(UIButton*)sender{
-    _scrollView.contentOffset = CGPointMake(0, 0);
-    jrgsLabel.textColor  = [UIColor redColor];
-    jrgwLabel.textColor  = [UIColor blackColor];
-    [self addTableRefresh];
-}
-
-
--(void)ClickJRGWBtn:(UIButton*)sender{
-    
-    _scrollView.contentOffset = CGPointMake(kScreenW, 0);
-    jrgsLabel.textColor  = [UIColor blackColor];
-    jrgwLabel.textColor  = [UIColor redColor];
-    [self addTableRefresh2];
-}
-
 
 -(void)addTableRefresh{
     // 添加头部刷新
@@ -100,8 +86,8 @@ static NSString *const JRGWCell = @"TZFinancialAdvisorCell";
         
         //        _page = 0;
         
-//        self.JDXXArray =[NSMutableArray arrayWithArray:_JDXXArray];
-//        [self.JDXXArray removeAllObjects];
+        //        self.JDXXArray =[NSMutableArray arrayWithArray:_JDXXArray];
+        //        [self.JDXXArray removeAllObjects];
         // 请求数据
         [CFProgressHUD showLoadingWithView:self.view];
         [self requestinfo];
@@ -118,8 +104,21 @@ static NSString *const JRGWCell = @"TZFinancialAdvisorCell";
     }];
     _tableView.mj_footer = footer;
     
+    
 }
-
+-(void)requestinfo{
+    //    [CFProgressHUD showLoadingWithView:self.view];
+    
+    [CFProgressHUD hideHUDForView:self.view];
+    
+    [_tableView reloadData];
+    [_tableView.mj_header endRefreshing];
+    [_tableView.mj_footer endRefreshing];
+    [_tableView2 reloadData];
+    [_tableView2.mj_header endRefreshing];
+    [_tableView2.mj_footer endRefreshing];
+    
+}
 -(void)addTableRefresh2{
     // 添加头部刷新
     MJRefreshNormalHeader * header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -147,39 +146,49 @@ static NSString *const JRGWCell = @"TZFinancialAdvisorCell";
 }
 
 
--(void)requestinfo{
-//    [CFProgressHUD showLoadingWithView:self.view];
-
-    [CFProgressHUD hideHUDForView:self.view];
-        
-    [_tableView reloadData];
-    [_tableView.mj_header endRefreshing];
-    [_tableView.mj_footer endRefreshing];
-    [_tableView2 reloadData];
-    [_tableView2.mj_header endRefreshing];
-    [_tableView2.mj_footer endRefreshing];
-
+-(void)ClickDDCBtn:(UIButton*)sender{
+    _scrollView.contentOffset = CGPointMake(0, 0);
+    dycLabel.textColor  = [UIColor redColor];
+    qtzqLabel.textColor  = [UIColor blackColor];
+      [self addTableRefresh];
+}
+-(void)ClickQTZQBtn:(UIButton*)sender{
+    _scrollView.contentOffset = CGPointMake(kScreenW, 0);
+    dycLabel.textColor  = [UIColor blackColor];
+    qtzqLabel.textColor  = [UIColor redColor];
+      [self addTableRefresh2];
+    
 }
 
 #pragma mark返回每行的单元格
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-     TZBondTransferCell *cell=[tableView dequeueReusableCellWithIdentifier:JRGSCell];
-     TZFinancialAdvisorCell *Advisorcell=[tableView dequeueReusableCellWithIdentifier:JRGWCell];
-    if ([tableView isEqual:_tableView]) {
-        if (cell == nil) {
-            cell=[[[NSBundle mainBundle]loadNibNamed:JRGSCell owner:self options:nil]lastObject];
+    ThreeImgCell *threeCell=[tableView dequeueReusableCellWithIdentifier:ThreeCell];
+    OneImgCell *oneCell=[tableView dequeueReusableCellWithIdentifier:OneCell];
+    NOImgCell *noCell = [tableView dequeueReusableCellWithIdentifier:NoCell];
+    if (indexPath.section == 0) {
+        if (threeCell == nil) {
+            threeCell=[[[NSBundle mainBundle]loadNibNamed:ThreeCell owner:self options:nil]lastObject];
             
         }
-        return cell;
-    }if ([tableView isEqual:_tableView2]) {
-        if (Advisorcell == nil) {
-            Advisorcell=[[[NSBundle mainBundle]loadNibNamed:JRGWCell owner:self options:nil]lastObject];
+        return threeCell;
+    }
+    if (indexPath.section == 1) {
+        if (oneCell == nil) {
+            oneCell=[[[NSBundle mainBundle]loadNibNamed:OneCell owner:self options:nil]lastObject];
+            
         }
-        return Advisorcell;
+        return oneCell;
+    }
+    if (indexPath.section == 2) {
+        if (noCell == nil) {
+            noCell=[[[NSBundle mainBundle]loadNibNamed:NoCell owner:self options:nil]lastObject];
+            
+        }
+        return noCell;
     }
 
-    
-    return cell;
+
+    return threeCell;
 }
 
 
@@ -205,12 +214,12 @@ static NSString *const JRGWCell = @"TZFinancialAdvisorCell";
 
 #pragma mark 设置每行高度（每行高度可以不一样）
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return kAutoHEX(100);
+    return kAutoHEX(136);
     
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    
 }
 
 - (void)didReceiveMemoryWarning {

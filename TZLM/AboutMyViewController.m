@@ -7,6 +7,9 @@
 //
 
 #import "AboutMyViewController.h"
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/TencentApiInterface.h>
+#import <ShareSDK/ShareSDK.h>
 
 #define Start_X          40.0f      // 第一个按钮的X坐标
 #define Start_Y          62.0f     // 第一个按钮的Y坐标
@@ -15,7 +18,10 @@
 #define Button_Height   59.0f    // 高
 #define Button_Width    63.0f    // 宽
 
-@interface AboutMyViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface AboutMyViewController ()<UITableViewDelegate,UITableViewDataSource,TencentSessionDelegate>{
+        TencentOAuth *_tencentOAuth;
+       NSMutableArray *_permissionArray;   //权限列表
+}
 @property (nonatomic,strong) UITableView *tableView;
 @end
 
@@ -91,11 +97,83 @@ static NSString *const Cell = @"cell";
         [self.navigationController pushViewController:loginVC animated:YES];
     }
     if (sender.tag == 1) {
-        
+
     }
      if (sender.tag == 2) {
-        
+//         _tencentOAuth = [[TencentOAuth alloc]initWithAppId:@"1105973851" andDelegate:self];
+//         //设置权限数据 ， 具体的权限名，在sdkdef.h 文件中查看。
+//         _permissionArray = [NSMutableArray arrayWithObjects: kOPEN_PERMISSION_GET_SIMPLE_USER_INFO,nil];
+//         //登录操作
+//         [_tencentOAuth authorize:_permissionArray inSafari:NO];
+         
+         [ShareSDK getUserInfo:SSDKPlatformTypeQQ
+                onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error)
+          {
+              if (state == SSDKResponseStateSuccess)
+              {
+                  
+                  NSLog(@"uid=%@",user.uid);
+                  NSLog(@"%@",user.credential);
+                  NSLog(@"token=%@",user.credential.token);
+                  NSLog(@"nickname=%@",user.nickname);
+              }
+              
+              else
+              {
+                  NSLog(@"%@",error);
+              }
+              
+          }];
     }
+}
+
+/**
+ * 登录成功后的回调
+ */
+- (void)tencentDidLogin{
+    
+    /** Access Token凭证，用于后续访问各开放接口 */
+    if (_tencentOAuth.accessToken) {
+        
+        //获取用户信息。 调用这个方法后，qq的sdk会自动调用
+        //- (void)getUserInfoResponse:(APIResponse*) response
+        //这个方法就是 用户信息的回调方法。
+        
+        [_tencentOAuth getUserInfo];
+    }else{
+        
+        NSLog(@"accessToken 没有获取成功");
+    }
+    
+}
+
+/**
+ * 获取用户个人信息回调
+ * \param response API返回结果，具体定义参见sdkdef.h文件中\ref APIResponse
+ * \remarks 正确返回示例: \snippet example/getUserInfoResponse.exp success
+ *          错误返回示例: \snippet example/getUserInfoResponse.exp fail
+ */
+- (void)getUserInfoResponse:(APIResponse*) response{
+    NSLog(@" response %@",response);
+}
+
+/**
+ * 登录失败后的回调
+ * \param cancelled 代表用户是否主动退出登录
+ */
+- (void)tencentDidNotLogin:(BOOL)cancelled{
+    if (cancelled) {
+        NSLog(@" 用户点击取消按键,主动退出登录");
+    }else{
+        NSLog(@"其他原因， 导致登录失败");
+    }
+}
+
+/**
+ * 登录时网络有问题的回调
+ */
+- (void)tencentDidNotNetWork{
+    NSLog(@"没有网络了， 怎么登录成功呢");
 }
 
 

@@ -12,6 +12,8 @@
 #import "ProvinceViewController.h"
 #import "CityViewController.h"
 #import "FinancialFirmsViewController.h"
+#import "DebentureTransferViewController.h"
+
 
 @interface HomePageViewController ()<CLLocationManagerDelegate,UISearchBarDelegate>{
      UIButton *button;
@@ -38,7 +40,7 @@
             vc0.title = @"借贷信息";
             [tabbar addSubItemWithViewController:vc0];
             
-            BorrowInfoViewController * vc1 = [[BorrowInfoViewController alloc]init];
+            DebentureTransferViewController * vc1 = [[DebentureTransferViewController alloc]init];
             vc1.title = @"债券转让";
             [tabbar addSubItemWithViewController:vc1];
             

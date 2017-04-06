@@ -190,7 +190,7 @@
     CXIcon.frame = CGRectMake(kAutoWEX(50),kAutoHEX(25), kAutoWEX(51), kAutoHEX(54));
     [CXIcon setBackgroundImage:[UIImage imageNamed:@"chaxun"] forState:UIControlStateNormal];
     UILabel *CXLabel = [[UILabel alloc]initWithFrame:CGRectMake(kAutoWEX(45), kAutoHEX(80), kAutoWEX(70), kAutoHEX(25))];
-    CXLabel.text = @"查询老赖";
+    CXLabel.text = @"综合查询";
     CXLabel.textColor = [UIColor whiteColor];
     CXLabel.font = [UIFont systemFontOfSize_5:16];
     [CXLLBtn addSubview:CXLabel];
@@ -277,6 +277,12 @@
 
 -(void)ClickZZZR:(UIButton *)sender{
     NSLog(@"ZZZR");
+    NSUserDefaults *userdefault=[NSUserDefaults standardUserDefaults];
+    [userdefault setObject:@"zzzr" forKey:@"ZZZR"];
+    [userdefault synchronize];
+    HomePageViewController *home=[[HomePageViewController alloc]init];
+    [self.navigationController pushViewController:home animated:YES];
+    
 }
 -(void)ClickJRGS:(UIButton *)sender{
     NSLog(@"JRGS");

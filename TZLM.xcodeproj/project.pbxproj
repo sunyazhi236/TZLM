@@ -141,7 +141,6 @@
 		A45BF28A1E601BC900266FA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A45BF2891E601BC900266FA8 /* main.m */; };
 		A45BF28D1E601BC900266FA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A45BF28C1E601BC900266FA8 /* AppDelegate.m */; };
 		A45BF2951E601BC900266FA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A45BF2941E601BC900266FA8 /* Assets.xcassets */; };
-		A45BF2981E601BC900266FA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45BF2961E601BC900266FA8 /* LaunchScreen.storyboard */; };
 		A45BF2A31E601BC900266FA8 /* TZLMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A45BF2A21E601BC900266FA8 /* TZLMTests.m */; };
 		A45BF2AE1E601BCA00266FA8 /* TZLMUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A45BF2AD1E601BCA00266FA8 /* TZLMUITests.m */; };
 		A45FDDF71E6D341400854E2E /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45FDDF61E6D341400854E2E /* RecommendViewController.m */; };
@@ -153,6 +152,18 @@
 		A466B1651E6AA53000D4E5BD /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A466B1641E6AA53000D4E5BD /* CityViewController.m */; };
 		A4691AED1E70F765000C24C3 /* UIFontAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A4691AEC1E70F765000C24C3 /* UIFontAddition.m */; };
 		A49321181E8E32AB00B261F3 /* FinancialFirmsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A49321171E8E32AB00B261F3 /* FinancialFirmsViewController.m */; };
+		A49A41F41E948B3C009AE290 /* TZFinancialAdvisorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A49A41F21E948B3C009AE290 /* TZFinancialAdvisorCell.m */; };
+		A49A41F51E948B3C009AE290 /* TZFinancialAdvisorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49A41F31E948B3C009AE290 /* TZFinancialAdvisorCell.xib */; };
+		A49A41F81E948EB6009AE290 /* DebentureTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A49A41F71E948EB6009AE290 /* DebentureTransferViewController.m */; };
+		A49A41FC1E948FF6009AE290 /* ThreeImgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A49A41FA1E948FF6009AE290 /* ThreeImgCell.m */; };
+		A49A41FD1E948FF6009AE290 /* ThreeImgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49A41FB1E948FF6009AE290 /* ThreeImgCell.xib */; };
+		A49A42011E949008009AE290 /* OneImgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A49A41FF1E949008009AE290 /* OneImgCell.m */; };
+		A49A42021E949008009AE290 /* OneImgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49A42001E949008009AE290 /* OneImgCell.xib */; };
+		A49A42061E949026009AE290 /* NOImgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A49A42041E949026009AE290 /* NOImgCell.m */; };
+		A49A42071E949026009AE290 /* NOImgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49A42051E949026009AE290 /* NOImgCell.xib */; };
+		A4AB9CF11E95D4A600723904 /* NetCreditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB9CF01E95D4A600723904 /* NetCreditViewController.m */; };
+		A4AB9CF51E95D4C000723904 /* NetCreditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB9CF31E95D4C000723904 /* NetCreditCell.m */; };
+		A4AB9CF61E95D4C000723904 /* NetCreditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4AB9CF41E95D4C000723904 /* NetCreditCell.xib */; };
 		A4E113D11E61568100438E12 /* RDVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E113CC1E61568100438E12 /* RDVTabBar.m */; };
 		A4E113D21E61568100438E12 /* RDVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E113CE1E61568100438E12 /* RDVTabBarController.m */; };
 		A4E113D31E61568100438E12 /* RDVTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E113D01E61568100438E12 /* RDVTabBarItem.m */; };
@@ -452,7 +463,6 @@
 		A45BF28B1E601BC900266FA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A45BF28C1E601BC900266FA8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A45BF2941E601BC900266FA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A45BF2971E601BC900266FA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A45BF2991E601BC900266FA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A45BF29E1E601BC900266FA8 /* TZLMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TZLMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45BF2A21E601BC900266FA8 /* TZLMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TZLMTests.m; sourceTree = "<group>"; };
@@ -476,6 +486,25 @@
 		A4691AEC1E70F765000C24C3 /* UIFontAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFontAddition.m; sourceTree = "<group>"; };
 		A49321161E8E32AB00B261F3 /* FinancialFirmsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialFirmsViewController.h; sourceTree = "<group>"; };
 		A49321171E8E32AB00B261F3 /* FinancialFirmsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialFirmsViewController.m; sourceTree = "<group>"; };
+		A49A41F11E948B3C009AE290 /* TZFinancialAdvisorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZFinancialAdvisorCell.h; sourceTree = "<group>"; };
+		A49A41F21E948B3C009AE290 /* TZFinancialAdvisorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZFinancialAdvisorCell.m; sourceTree = "<group>"; };
+		A49A41F31E948B3C009AE290 /* TZFinancialAdvisorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TZFinancialAdvisorCell.xib; sourceTree = "<group>"; };
+		A49A41F61E948EB6009AE290 /* DebentureTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebentureTransferViewController.h; sourceTree = "<group>"; };
+		A49A41F71E948EB6009AE290 /* DebentureTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebentureTransferViewController.m; sourceTree = "<group>"; };
+		A49A41F91E948FF6009AE290 /* ThreeImgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeImgCell.h; sourceTree = "<group>"; };
+		A49A41FA1E948FF6009AE290 /* ThreeImgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeImgCell.m; sourceTree = "<group>"; };
+		A49A41FB1E948FF6009AE290 /* ThreeImgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreeImgCell.xib; sourceTree = "<group>"; };
+		A49A41FE1E949008009AE290 /* OneImgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneImgCell.h; sourceTree = "<group>"; };
+		A49A41FF1E949008009AE290 /* OneImgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneImgCell.m; sourceTree = "<group>"; };
+		A49A42001E949008009AE290 /* OneImgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneImgCell.xib; sourceTree = "<group>"; };
+		A49A42031E949026009AE290 /* NOImgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOImgCell.h; sourceTree = "<group>"; };
+		A49A42041E949026009AE290 /* NOImgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOImgCell.m; sourceTree = "<group>"; };
+		A49A42051E949026009AE290 /* NOImgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NOImgCell.xib; sourceTree = "<group>"; };
+		A4AB9CEF1E95D4A600723904 /* NetCreditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetCreditViewController.h; sourceTree = "<group>"; };
+		A4AB9CF01E95D4A600723904 /* NetCreditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetCreditViewController.m; sourceTree = "<group>"; };
+		A4AB9CF21E95D4C000723904 /* NetCreditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetCreditCell.h; sourceTree = "<group>"; };
+		A4AB9CF31E95D4C000723904 /* NetCreditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetCreditCell.m; sourceTree = "<group>"; };
+		A4AB9CF41E95D4C000723904 /* NetCreditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetCreditCell.xib; sourceTree = "<group>"; };
 		A4E113CB1E61568100438E12 /* RDVTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBar.h; sourceTree = "<group>"; };
 		A4E113CC1E61568100438E12 /* RDVTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBar.m; sourceTree = "<group>"; };
 		A4E113CD1E61568100438E12 /* RDVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarController.h; sourceTree = "<group>"; };
@@ -553,13 +582,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A466B15B1E6A61E200D4E5BD /* CoreLocation.framework in Frameworks */,
-				A4407C8B1E63CD5D0052E144 /* MessageUI.framework in Frameworks */,
 				A4407C891E63CD470052E144 /* libsqlite3.tbd in Frameworks */,
 				A4407C871E63CD250052E144 /* JavaScriptCore.framework in Frameworks */,
 				A4407C851E63CD1A0052E144 /* libstdc++.tbd in Frameworks */,
 				A4407C831E63CD100052E144 /* libz.tbd in Frameworks */,
 				A4407C811E63CD040052E144 /* libicucore.tbd in Frameworks */,
+				A466B15B1E6A61E200D4E5BD /* CoreLocation.framework in Frameworks */,
+				A4407C8B1E63CD5D0052E144 /* MessageUI.framework in Frameworks */,
 				A4407C731E63CCD30052E144 /* WechatConnector.framework in Frameworks */,
 				A4407C7E1E63CCD30052E144 /* ShareSDKConnector.framework in Frameworks */,
 				A4407C671E63CCD30052E144 /* ShareSDK.framework in Frameworks */,
@@ -1101,7 +1130,6 @@
 				A4E113E61E617C6500438E12 /* AppDelegate+RootController.h */,
 				A4E113E71E617C6500438E12 /* AppDelegate+RootController.m */,
 				A45BF2941E601BC900266FA8 /* Assets.xcassets */,
-				A45BF2961E601BC900266FA8 /* LaunchScreen.storyboard */,
 				A45BF2991E601BC900266FA8 /* Info.plist */,
 				A45BF2881E601BC900266FA8 /* Supporting Files */,
 			);
@@ -1154,6 +1182,54 @@
 			name = Category;
 			sourceTree = "<group>";
 		};
+		A47B5CA21E9246BE003AD64B /* 债券转让 */ = {
+			isa = PBXGroup;
+			children = (
+				A49A41F61E948EB6009AE290 /* DebentureTransferViewController.h */,
+				A49A41F71E948EB6009AE290 /* DebentureTransferViewController.m */,
+			);
+			name = "债券转让";
+			sourceTree = "<group>";
+		};
+		A47B5CA31E924720003AD64B /* 借贷信息 */ = {
+			isa = PBXGroup;
+			children = (
+				A44FF39B1E667A700052D0A3 /* TZBorrowInfoCell.h */,
+				A44FF39C1E667A700052D0A3 /* TZBorrowInfoCell.m */,
+				A44FF39D1E667A700052D0A3 /* TZBorrowInfoCell.xib */,
+			);
+			name = "借贷信息";
+			sourceTree = "<group>";
+		};
+		A47B5CA41E92473A003AD64B /* 金融公司 */ = {
+			isa = PBXGroup;
+			children = (
+				A45121B71E680594005CC3A4 /* TZBondTransferCell.h */,
+				A45121B81E680594005CC3A4 /* TZBondTransferCell.m */,
+				A45121B91E680594005CC3A4 /* TZBondTransferCell.xib */,
+				A49A41F11E948B3C009AE290 /* TZFinancialAdvisorCell.h */,
+				A49A41F21E948B3C009AE290 /* TZFinancialAdvisorCell.m */,
+				A49A41F31E948B3C009AE290 /* TZFinancialAdvisorCell.xib */,
+			);
+			name = "金融公司";
+			sourceTree = "<group>";
+		};
+		A47B5CA51E924759003AD64B /* 债券转让 */ = {
+			isa = PBXGroup;
+			children = (
+				A49A41F91E948FF6009AE290 /* ThreeImgCell.h */,
+				A49A41FA1E948FF6009AE290 /* ThreeImgCell.m */,
+				A49A41FB1E948FF6009AE290 /* ThreeImgCell.xib */,
+				A49A41FE1E949008009AE290 /* OneImgCell.h */,
+				A49A41FF1E949008009AE290 /* OneImgCell.m */,
+				A49A42001E949008009AE290 /* OneImgCell.xib */,
+				A49A42031E949026009AE290 /* NOImgCell.h */,
+				A49A42041E949026009AE290 /* NOImgCell.m */,
+				A49A42051E949026009AE290 /* NOImgCell.xib */,
+			);
+			name = "债券转让";
+			sourceTree = "<group>";
+		};
 		A49321141E8E326E00B261F3 /* 借贷信息 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1174,6 +1250,25 @@
 				A49321171E8E32AB00B261F3 /* FinancialFirmsViewController.m */,
 			);
 			name = "金融公司";
+			sourceTree = "<group>";
+		};
+		A4AB9CED1E95D44E00723904 /* 网贷口子 */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB9CF21E95D4C000723904 /* NetCreditCell.h */,
+				A4AB9CF31E95D4C000723904 /* NetCreditCell.m */,
+				A4AB9CF41E95D4C000723904 /* NetCreditCell.xib */,
+			);
+			name = "网贷口子";
+			sourceTree = "<group>";
+		};
+		A4AB9CEE1E95D46A00723904 /* 网贷口子 */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB9CEF1E95D4A600723904 /* NetCreditViewController.h */,
+				A4AB9CF01E95D4A600723904 /* NetCreditViewController.m */,
+			);
+			name = "网贷口子";
 			sourceTree = "<group>";
 		};
 		A4E113C91E61564E00438E12 /* Libs */ = {
@@ -1271,6 +1366,8 @@
 				A4E113EC1E61828500438E12 /* HomePageViewController.m */,
 				A49321141E8E326E00B261F3 /* 借贷信息 */,
 				A49321151E8E328000B261F3 /* 金融公司 */,
+				A47B5CA21E9246BE003AD64B /* 债券转让 */,
+				A4AB9CEE1E95D46A00723904 /* 网贷口子 */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1291,12 +1388,10 @@
 		A4E113F11E6182DD00438E12 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A44FF39B1E667A700052D0A3 /* TZBorrowInfoCell.h */,
-				A44FF39C1E667A700052D0A3 /* TZBorrowInfoCell.m */,
-				A44FF39D1E667A700052D0A3 /* TZBorrowInfoCell.xib */,
-				A45121B71E680594005CC3A4 /* TZBondTransferCell.h */,
-				A45121B81E680594005CC3A4 /* TZBondTransferCell.m */,
-				A45121B91E680594005CC3A4 /* TZBondTransferCell.xib */,
+				A47B5CA31E924720003AD64B /* 借贷信息 */,
+				A47B5CA41E92473A003AD64B /* 金融公司 */,
+				A47B5CA51E924759003AD64B /* 债券转让 */,
+				A4AB9CED1E95D44E00723904 /* 网贷口子 */,
 				A45FDDF81E6D3DA100854E2E /* XRCollectionViewCell.h */,
 				A45FDDF91E6D3DA100854E2E /* XRCollectionViewCell.m */,
 				A45FDDFA1E6D3DA100854E2E /* XRCollectionViewCell.xib */,
@@ -1568,7 +1663,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = A45BF27C1E601BC900266FA8;
 			productRefGroup = A45BF2861E601BC900266FA8 /* Products */;
@@ -1591,7 +1685,7 @@
 				A4407C761E63CCD30052E144 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				A44FF37E1E666B1C0052D0A3 /* pic_loading_5.png in Resources */,
 				A45FDDFC1E6D3DA100854E2E /* XRCollectionViewCell.xib in Resources */,
-				A45BF2981E601BC900266FA8 /* LaunchScreen.storyboard in Resources */,
+				A49A42071E949026009AE290 /* NOImgCell.xib in Resources */,
 				A4E113E31E617BCD00438E12 /* MSAlertController_ActionSheet.xib in Resources */,
 				A4E114411E618B8800438E12 /* lk_noimage@2x.png in Resources */,
 				A4407C7B1E63CCD30052E144 /* README.txt in Resources */,
@@ -1603,6 +1697,7 @@
 				A4407C7A1E63CCD30052E144 /* read_me.txt in Resources */,
 				A45121BB1E680594005CC3A4 /* TZBondTransferCell.xib in Resources */,
 				A44E0DCC1E6412EA007818FC /* MJRefresh.bundle in Resources */,
+				A4AB9CF61E95D4C000723904 /* NetCreditCell.xib in Resources */,
 				A44FF37C1E666B170052D0A3 /* pic_loading_4.png in Resources */,
 				A4E1143F1E618B8800438E12 /* lk_click_image@3x.png in Resources */,
 				A4E1143E1E618B8800438E12 /* lk_click_image@2x.png in Resources */,
@@ -1610,16 +1705,19 @@
 				A44FF3841E666B2A0052D0A3 /* pic_loading_8.png in Resources */,
 				A45BF2951E601BC900266FA8 /* Assets.xcassets in Resources */,
 				A44FF3801E666B210052D0A3 /* pic_loading_6.png in Resources */,
+				A49A41FD1E948FF6009AE290 /* ThreeImgCell.xib in Resources */,
 				A4407C781E63CCD30052E144 /* WeiboSDK.bundle in Resources */,
 				A418592F1E651FCF00DA8F68 /* banner2.png in Resources */,
 				A4407C7D1E63CCD30052E144 /* ShareSDK.bundle in Resources */,
 				A41859311E651FCF00DA8F68 /* banner1.png in Resources */,
+				A49A41F51E948B3C009AE290 /* TZFinancialAdvisorCell.xib in Resources */,
 				A4407C6B1E63CCD30052E144 /* ShareSDKUI.bundle in Resources */,
 				A4407C681E63CCD30052E144 /* ShareSDKConfigFile.bundle in Resources */,
 				A45121A81E67BEF2005CC3A4 /* MBProgressHUD.bundle in Resources */,
 				A44FF3821E666B250052D0A3 /* pic_loading_7.png in Resources */,
 				A44FF3861E666B320052D0A3 /* pic_loading_9.png in Resources */,
 				A4E114401E618B8800438E12 /* lk_noimage.png in Resources */,
+				A49A42021E949008009AE290 /* OneImgCell.xib in Resources */,
 				A41859301E651FCF00DA8F68 /* banner3.png in Resources */,
 				A44FF3761E666B070052D0A3 /* pic_loading_1.png in Resources */,
 				A44FF3781E666B0C0052D0A3 /* pic_loading_2.png in Resources */,
@@ -1656,6 +1754,7 @@
 				A4E1144F1E618B8800438E12 /* UIImageView+WebCache.m in Sources */,
 				A44E0D851E6412D9007818FC /* MASCompositeConstraint.m in Sources */,
 				A44E0D871E6412D9007818FC /* MASConstraintMaker.m in Sources */,
+				A49A41F81E948EB6009AE290 /* DebentureTransferViewController.m in Sources */,
 				A44E0D891E6412D9007818FC /* MASViewAttribute.m in Sources */,
 				A466B1651E6AA53000D4E5BD /* CityViewController.m in Sources */,
 				A44E0DC91E6412EA007818FC /* MJRefreshGifHeader.m in Sources */,
@@ -1694,9 +1793,11 @@
 				A44FF3C01E66A61B0052D0A3 /* NSObject+MJCoding.m in Sources */,
 				A44FF3B91E66A61B0052D0A3 /* MJConst.m in Sources */,
 				A4E114091E618A9E00438E12 /* VTGeneralTool.m in Sources */,
+				A49A42061E949026009AE290 /* NOImgCell.m in Sources */,
 				A41859471E65598000DA8F68 /* SDCycleScrollView.m in Sources */,
 				A44E0DC11E6412EA007818FC /* MJRefreshFooter.m in Sources */,
 				A4E1144D1E618B8800438E12 /* UIImage+WebP.m in Sources */,
+				A49A42011E949008009AE290 /* OneImgCell.m in Sources */,
 				A4E114491E618B8800438E12 /* SDWebImagePrefetcher.m in Sources */,
 				A4E1143C1E618B8800438E12 /* SDImageCache.m in Sources */,
 				A44DEE981E8A0BF0001AFE10 /* RapidRegistrationViewController.m in Sources */,
@@ -1706,6 +1807,7 @@
 				A45BF28A1E601BC900266FA8 /* main.m in Sources */,
 				A4ED14141E8B9E57003C76ED /* PublishLoanViewController.m in Sources */,
 				A44FF3BA1E66A61B0052D0A3 /* MJFoundation.m in Sources */,
+				A4AB9CF11E95D4A600723904 /* NetCreditViewController.m in Sources */,
 				A4E114441E618B8800438E12 /* SDWebImageCompat.m in Sources */,
 				A4E113D11E61568100438E12 /* RDVTabBar.m in Sources */,
 				A44FF3BC1E66A61B0052D0A3 /* MJMember.m in Sources */,
@@ -1718,6 +1820,7 @@
 				A44D33461E694806000EE5F2 /* HYTabbarCollectionCell.m in Sources */,
 				A4E114431E618B8800438E12 /* UIImageView+LK.m in Sources */,
 				A44FF34F1E6661B30052D0A3 /* AFURLSessionManager.m in Sources */,
+				A49A41FC1E948FF6009AE290 /* ThreeImgCell.m in Sources */,
 				A44E0DCD1E6412EA007818FC /* MJRefreshConst.m in Sources */,
 				A44E0D861E6412D9007818FC /* MASConstraint.m in Sources */,
 				A44E0DD01E6412EA007818FC /* UIScrollView+MJRefresh.m in Sources */,
@@ -1737,10 +1840,12 @@
 				A41859431E65598000DA8F68 /* TAAnimatedDotView.m in Sources */,
 				A44E0D531E64013A007818FC /* LoginViewController.m in Sources */,
 				A44E0DCA1E6412EA007818FC /* MJRefreshNormalHeader.m in Sources */,
+				A4AB9CF51E95D4C000723904 /* NetCreditCell.m in Sources */,
 				A45121A91E67BEF2005CC3A4 /* MBProgressHUD.m in Sources */,
 				A44E0D8E1E6412D9007818FC /* ViewController+MASAdditions.m in Sources */,
 				A44E0DC71E6412EA007818FC /* MJRefreshBackNormalFooter.m in Sources */,
 				A45FDDFB1E6D3DA100854E2E /* XRCollectionViewCell.m in Sources */,
+				A49A41F41E948B3C009AE290 /* TZFinancialAdvisorCell.m in Sources */,
 				A44FF3C11E66A61B0052D0A3 /* NSObject+MJKeyValue.m in Sources */,
 				A45121A71E67BEF2005CC3A4 /* MBProgressHUD+MJ.m in Sources */,
 				A4E1144E1E618B8800438E12 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -1801,17 +1906,6 @@
 			targetProxy = A45BF2AA1E601BCA00266FA8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		A45BF2961E601BC900266FA8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A45BF2971E601BC900266FA8 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A45BF2B01E601BCA00266FA8 /* Debug */ = {

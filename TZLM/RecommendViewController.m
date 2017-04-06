@@ -105,7 +105,6 @@ static NSString *const JDXXCell = @"TZBorrowInfoCell";
     [CFProgressHUD showLoadingWithView:self.view];
     [self requestBorrow];
     [self addTableRefresh];
-
 }
 
 -(void)addTableRefresh{
@@ -225,6 +224,7 @@ static NSString *const JDXXCell = @"TZBorrowInfoCell";
 
     if (sender.tag == 0) {
     self.scrollView.contentOffset = CGPointMake(0, 0);
+        [self addTableRefresh];
     }
     if (sender.tag == 1) {
     self.scrollView.contentOffset = CGPointMake(kScreenW, 0);
