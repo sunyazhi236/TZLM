@@ -10,7 +10,7 @@
 #import "AllianceThreeCell.h"
 #import "AllianceOneCell.h"
 #import "AllianceNOCell.h"
-
+#import "RentPledgeCell.h"
 
 @interface AllianceViewController ()<UITableViewDelegate,UITableViewDataSource>{
     UILabel *lmxcLabel;
@@ -25,6 +25,7 @@
 static NSString *const ThreeCell = @"AllianceThreeCell";
 static NSString *const OneCell = @"AllianceOneCell";
 static NSString *const NoCell = @"AllianceNOCell";
+static NSString *const RentCell = @"RentPledgeCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -169,27 +170,37 @@ static NSString *const NoCell = @"AllianceNOCell";
     AllianceThreeCell *threeCell=[tableView dequeueReusableCellWithIdentifier:ThreeCell];
     AllianceOneCell *oneCell=[tableView dequeueReusableCellWithIdentifier:OneCell];
     AllianceNOCell *noCell = [tableView dequeueReusableCellWithIdentifier:NoCell];
-    if (indexPath.section == 0) {
-        if (threeCell == nil) {
-            threeCell=[[[NSBundle mainBundle]loadNibNamed:ThreeCell owner:self options:nil]lastObject];
-            
+    RentPledgeCell *rentcell = [tableView dequeueReusableCellWithIdentifier:RentCell];
+    if ([tableView isEqual:_tableView]) {
+        if (indexPath.section == 0) {
+            if (threeCell == nil) {
+                threeCell=[[[NSBundle mainBundle]loadNibNamed:ThreeCell owner:self options:nil]lastObject];
+                
+            }
+            return threeCell;
         }
-        return threeCell;
-    }
-    if (indexPath.section == 1) {
-        if (oneCell == nil) {
-            oneCell=[[[NSBundle mainBundle]loadNibNamed:OneCell owner:self options:nil]lastObject];
-            
+        if (indexPath.section == 1) {
+            if (oneCell == nil) {
+                oneCell=[[[NSBundle mainBundle]loadNibNamed:OneCell owner:self options:nil]lastObject];
+                
+            }
+            return oneCell;
         }
-        return oneCell;
-    }
-    if (indexPath.section == 2) {
-        if (noCell == nil) {
-            noCell=[[[NSBundle mainBundle]loadNibNamed:NoCell owner:self options:nil]lastObject];
-            
+        if (indexPath.section == 2) {
+            if (noCell == nil) {
+                noCell=[[[NSBundle mainBundle]loadNibNamed:NoCell owner:self options:nil]lastObject];
+                
+            }
+            return noCell;
         }
-        return noCell;
     }
+    if ([tableView isEqual:_tableView2]) {
+        if (rentcell == nil) {
+            rentcell = [[[NSBundle mainBundle]loadNibNamed:RentCell owner:self options:nil]lastObject];
+        }
+        return rentcell;
+    }
+    
     
     
     return threeCell;
@@ -218,7 +229,12 @@ static NSString *const NoCell = @"AllianceNOCell";
 
 #pragma mark 设置每行高度（每行高度可以不一样）
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return kAutoHEX(136);
+    if ([tableView isEqual:_tableView]) {
+           return kAutoHEX(136);
+    }else{
+        return kAutoHEX(112);
+    }
+ 
     
 }
 

@@ -291,7 +291,7 @@ static NSString *const JRGWCell = @"TZFinancialAdvisorCell";
             
             [_typeView removeFromSuperview];
             _typeView = nil;
-        }];
+        }];                                                                                                                                                                                                                                                                                                      
     }if (_limitView) {
         
         [UIView animateWithDuration:0.25 animations:^{

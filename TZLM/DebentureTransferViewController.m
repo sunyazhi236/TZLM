@@ -188,7 +188,6 @@ static NSString *const NoCell = @"NOImgCell";
         return noCell;
     }
 
-
     return threeCell;
 }
 

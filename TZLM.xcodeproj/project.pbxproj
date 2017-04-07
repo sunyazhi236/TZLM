@@ -151,6 +151,8 @@
 		A466B15F1E6A906700D4E5BD /* ProvinceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A466B15E1E6A906700D4E5BD /* ProvinceViewController.m */; };
 		A466B1651E6AA53000D4E5BD /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A466B1641E6AA53000D4E5BD /* CityViewController.m */; };
 		A4691AED1E70F765000C24C3 /* UIFontAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A4691AEC1E70F765000C24C3 /* UIFontAddition.m */; };
+		A47EACFD1E978139004C8D4F /* RentPledgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A47EACFB1E978139004C8D4F /* RentPledgeCell.m */; };
+		A47EACFE1E978139004C8D4F /* RentPledgeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47EACFC1E978139004C8D4F /* RentPledgeCell.xib */; };
 		A49321181E8E32AB00B261F3 /* FinancialFirmsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A49321171E8E32AB00B261F3 /* FinancialFirmsViewController.m */; };
 		A49A41F41E948B3C009AE290 /* TZFinancialAdvisorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A49A41F21E948B3C009AE290 /* TZFinancialAdvisorCell.m */; };
 		A49A41F51E948B3C009AE290 /* TZFinancialAdvisorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49A41F31E948B3C009AE290 /* TZFinancialAdvisorCell.xib */; };
@@ -492,6 +494,9 @@
 		A466B1641E6AA53000D4E5BD /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
 		A4691AEB1E70F765000C24C3 /* UIFontAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFontAddition.h; sourceTree = "<group>"; };
 		A4691AEC1E70F765000C24C3 /* UIFontAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFontAddition.m; sourceTree = "<group>"; };
+		A47EACFA1E978139004C8D4F /* RentPledgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RentPledgeCell.h; sourceTree = "<group>"; };
+		A47EACFB1E978139004C8D4F /* RentPledgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RentPledgeCell.m; sourceTree = "<group>"; };
+		A47EACFC1E978139004C8D4F /* RentPledgeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RentPledgeCell.xib; sourceTree = "<group>"; };
 		A49321161E8E32AB00B261F3 /* FinancialFirmsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialFirmsViewController.h; sourceTree = "<group>"; };
 		A49321171E8E32AB00B261F3 /* FinancialFirmsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialFirmsViewController.m; sourceTree = "<group>"; };
 		A49A41F11E948B3C009AE290 /* TZFinancialAdvisorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZFinancialAdvisorCell.h; sourceTree = "<group>"; };
@@ -1315,6 +1320,9 @@
 				A4AB9D061E961AE600723904 /* AllianceNOCell.h */,
 				A4AB9D071E961AE600723904 /* AllianceNOCell.m */,
 				A4AB9D081E961AE600723904 /* AllianceNOCell.xib */,
+				A47EACFA1E978139004C8D4F /* RentPledgeCell.h */,
+				A47EACFB1E978139004C8D4F /* RentPledgeCell.m */,
+				A47EACFC1E978139004C8D4F /* RentPledgeCell.xib */,
 			);
 			name = "质押联盟";
 			sourceTree = "<group>";
@@ -1740,6 +1748,7 @@
 				A4E114411E618B8800438E12 /* lk_noimage@2x.png in Resources */,
 				A4407C7B1E63CCD30052E144 /* README.txt in Resources */,
 				A44FF3881E666B370052D0A3 /* pic_loading_10.png in Resources */,
+				A47EACFE1E978139004C8D4F /* RentPledgeCell.xib in Resources */,
 				A44FF38C1E666B3F0052D0A3 /* pic_loading_12.png in Resources */,
 				A4E113E51E617BCD00438E12 /* MSAlertController.xib in Resources */,
 				A4E1143D1E618B8800438E12 /* lk_click_image.png in Resources */,
@@ -1866,6 +1875,7 @@
 				A4ED14141E8B9E57003C76ED /* PublishLoanViewController.m in Sources */,
 				A44FF3BA1E66A61B0052D0A3 /* MJFoundation.m in Sources */,
 				A4AB9CF11E95D4A600723904 /* NetCreditViewController.m in Sources */,
+				A47EACFD1E978139004C8D4F /* RentPledgeCell.m in Sources */,
 				A4E114441E618B8800438E12 /* SDWebImageCompat.m in Sources */,
 				A4E113D11E61568100438E12 /* RDVTabBar.m in Sources */,
 				A44FF3BC1E66A61B0052D0A3 /* MJMember.m in Sources */,
