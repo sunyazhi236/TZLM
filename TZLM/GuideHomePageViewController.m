@@ -190,7 +190,7 @@
     CXIcon.frame = CGRectMake(kAutoWEX(50),kAutoHEX(25), kAutoWEX(51), kAutoHEX(54));
     [CXIcon setBackgroundImage:[UIImage imageNamed:@"chaxun"] forState:UIControlStateNormal];
     UILabel *CXLabel = [[UILabel alloc]initWithFrame:CGRectMake(kAutoWEX(45), kAutoHEX(80), kAutoWEX(70), kAutoHEX(25))];
-    CXLabel.text = @"综合查询";
+    CXLabel.text = @"查询老赖";
     CXLabel.textColor = [UIColor whiteColor];
     CXLabel.font = [UIFont systemFontOfSize_5:16];
     [CXLLBtn addSubview:CXLabel];
@@ -207,7 +207,7 @@
     QLLIcon.frame = CGRectMake(kAutoWEX(10),kAutoHEX(10), kAutoWEX(38), kAutoHEX(38));
     [QLLIcon setBackgroundImage:[UIImage imageNamed:@"qianlaile"] forState:UIControlStateNormal];
     UILabel *QLLLabel = [[UILabel alloc]initWithFrame:CGRectMake(kAutoWEX(60), kAutoHEX(18), kAutoWEX(70), kAutoHEX(25))];
-    QLLLabel.text = @"钱来啦！";
+    QLLLabel.text = @"网贷口子";
     QLLLabel.textColor = [UIColor whiteColor];
     QLLLabel.font = [UIFont systemFontOfSize_5:16];
     [QLLBtn addSubview:QLLLabel];
@@ -224,7 +224,7 @@
     XSGGIcon.frame = CGRectMake(kAutoWEX(10),kAutoHEX(10), kAutoWEX(36), kAutoHEX(37));
     [XSGGIcon setBackgroundImage:[UIImage imageNamed:@"xuanshang"] forState:UIControlStateNormal];
     UILabel *XSGGLabel = [[UILabel alloc]initWithFrame:CGRectMake(kAutoWEX(60), kAutoHEX(18), kAutoWEX(70), kAutoHEX(25))];
-    XSGGLabel.text = @"悬赏广告";
+    XSGGLabel.text = @"质押联盟";
     XSGGLabel.textColor = [UIColor whiteColor];
     XSGGLabel.font = [UIFont systemFontOfSize_5:16];
     [XSGGBtn addSubview:XSGGLabel];
@@ -241,7 +241,7 @@
     YWYDIcon.frame = CGRectMake(kAutoWEX(28),kAutoHEX(15), kAutoWEX(34), kAutoHEX(47));
     [YWYDIcon setBackgroundImage:[UIImage imageNamed:@"youwen"] forState:UIControlStateNormal];
     UILabel *YWYDLabel = [[UILabel alloc]initWithFrame:CGRectMake(kAutoWEX(18), kAutoHEX(62), kAutoWEX(70), kAutoHEX(25))];
-    YWYDLabel.text = @"有问有答";
+    YWYDLabel.text = @"联系我们";
     YWYDLabel.textColor = [UIColor whiteColor];
     YWYDLabel.font = [UIFont systemFontOfSize_5:16];
     [YWYDBtn addSubview:YWYDLabel];
@@ -295,23 +295,25 @@
 
 -(void)ClickCXLL:(UIButton *)sender{
     NSLog(@"CXLL");
+
+}
+-(void)ClickQLL:(UIButton *)sender{
+    NSLog(@"QLL");
     NSUserDefaults *userdefault=[NSUserDefaults standardUserDefaults];
     [userdefault setObject:@"wdkz" forKey:@"WDKZ"];
     [userdefault synchronize];
     HomePageViewController *home=[[HomePageViewController alloc]init];
     [self.navigationController pushViewController:home animated:YES];
+
 }
--(void)ClickQLL:(UIButton *)sender{
-    NSLog(@"QLL");
+
+-(void)ClickXSGG:(UIButton *)sender{
+    NSLog(@"XSGG");
     NSUserDefaults *userdefault=[NSUserDefaults standardUserDefaults];
     [userdefault setObject:@"zylm" forKey:@"ZYLM"];
     [userdefault synchronize];
     HomePageViewController *home=[[HomePageViewController alloc]init];
     [self.navigationController pushViewController:home animated:YES];
-}
-
--(void)ClickXSGG:(UIButton *)sender{
-    NSLog(@"XSGG");
 }
 
 -(void)ClickYWYD:(UIButton *)sender{

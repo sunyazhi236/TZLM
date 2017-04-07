@@ -171,6 +171,7 @@
 		A4AB9D051E961AD200723904 /* AllianceOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4AB9D031E961AD200723904 /* AllianceOneCell.xib */; };
 		A4AB9D091E961AE600723904 /* AllianceNOCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB9D071E961AE600723904 /* AllianceNOCell.m */; };
 		A4AB9D0A1E961AE600723904 /* AllianceNOCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4AB9D081E961AE600723904 /* AllianceNOCell.xib */; };
+		A4AB9D0D1E962D8A00723904 /* FinancialListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB9D0C1E962D8A00723904 /* FinancialListHeaderView.m */; };
 		A4E113D11E61568100438E12 /* RDVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E113CC1E61568100438E12 /* RDVTabBar.m */; };
 		A4E113D21E61568100438E12 /* RDVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E113CE1E61568100438E12 /* RDVTabBarController.m */; };
 		A4E113D31E61568100438E12 /* RDVTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E113D01E61568100438E12 /* RDVTabBarItem.m */; };
@@ -523,6 +524,8 @@
 		A4AB9D061E961AE600723904 /* AllianceNOCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllianceNOCell.h; sourceTree = "<group>"; };
 		A4AB9D071E961AE600723904 /* AllianceNOCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllianceNOCell.m; sourceTree = "<group>"; };
 		A4AB9D081E961AE600723904 /* AllianceNOCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllianceNOCell.xib; sourceTree = "<group>"; };
+		A4AB9D0B1E962D8A00723904 /* FinancialListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialListHeaderView.h; sourceTree = "<group>"; };
+		A4AB9D0C1E962D8A00723904 /* FinancialListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialListHeaderView.m; sourceTree = "<group>"; };
 		A4E113CB1E61568100438E12 /* RDVTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBar.h; sourceTree = "<group>"; };
 		A4E113CC1E61568100438E12 /* RDVTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBar.m; sourceTree = "<group>"; };
 		A4E113CD1E61568100438E12 /* RDVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarController.h; sourceTree = "<group>"; };
@@ -1228,6 +1231,8 @@
 				A49A41F11E948B3C009AE290 /* TZFinancialAdvisorCell.h */,
 				A49A41F21E948B3C009AE290 /* TZFinancialAdvisorCell.m */,
 				A49A41F31E948B3C009AE290 /* TZFinancialAdvisorCell.xib */,
+				A4AB9D0B1E962D8A00723904 /* FinancialListHeaderView.h */,
+				A4AB9D0C1E962D8A00723904 /* FinancialListHeaderView.m */,
 			);
 			name = "金融公司";
 			sourceTree = "<group>";
@@ -1855,6 +1860,7 @@
 				A44E0D8C1E6412D9007818FC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				A4E113DB1E61779500438E12 /* TZRootViewController.m in Sources */,
 				A44E0DCB1E6412EA007818FC /* MJRefreshStateHeader.m in Sources */,
+				A4AB9D0D1E962D8A00723904 /* FinancialListHeaderView.m in Sources */,
 				A45BF28A1E601BC900266FA8 /* main.m in Sources */,
 				A4AB9CFF1E961ABC00723904 /* AllianceThreeCell.m in Sources */,
 				A4ED14141E8B9E57003C76ED /* PublishLoanViewController.m in Sources */,
