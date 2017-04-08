@@ -15,6 +15,7 @@
 #import "DebentureTransferViewController.h"
 #import "NetCreditViewController.h"
 #import "AllianceViewController.h"
+#import "PublishViewController.h"
 
 
 @interface HomePageViewController ()<CLLocationManagerDelegate,UISearchBarDelegate>{
@@ -59,8 +60,12 @@
             [tabbar addSubItemWithViewController:vc4];
             
             QueryInfoViewController * vc5 = [[QueryInfoViewController alloc]init];
-            vc5.title = @"头条号";
+            vc5.title = @"查询老赖";
             [tabbar addSubItemWithViewController:vc5];
+            
+            QueryInfoViewController * vc6 = [[QueryInfoViewController alloc]init];
+            vc6.title = @"联盟论坛";
+            [tabbar addSubItemWithViewController:vc6];
             
             tabbar;
         });
@@ -129,8 +134,18 @@
     _FBBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _FBBtn.frame = CGRectMake(kScreenW - kAutoWEX(58), kAutoHEX(500), kAutoWEX(58), kAutoHEX(53));
     [_FBBtn setBackgroundImage:[UIImage imageNamed:@"fb"] forState:UIControlStateNormal];
+    [_FBBtn addTarget:self action:@selector(didClickFBBtn:) forControlEvents:UIControlEventTouchUpInside];
     [app.window addSubview:_FBBtn];
 }
+
+
+-(void)didClickFBBtn:(UIButton*)sender{
+    PublishViewController *publicVC = [[PublishViewController alloc]init];
+    [self presentViewController:publicVC animated:YES completion:nil];
+    
+    
+}
+
 
 -(void)keyboardHide:(UITapGestureRecognizer*)tap{
     if ([_customSearchBar isFirstResponder]) {

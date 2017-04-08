@@ -147,6 +147,7 @@
 		A45FDDFB1E6D3DA100854E2E /* XRCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A45FDDF91E6D3DA100854E2E /* XRCollectionViewCell.m */; };
 		A45FDDFC1E6D3DA100854E2E /* XRCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A45FDDFA1E6D3DA100854E2E /* XRCollectionViewCell.xib */; };
 		A45FDE021E6D3DE600854E2E /* XRWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A45FDE011E6D3DE600854E2E /* XRWaterfallLayout.m */; };
+		A4663C161E98C49500F34A44 /* PublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4663C151E98C49500F34A44 /* PublishViewController.m */; };
 		A466B15B1E6A61E200D4E5BD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A466B15A1E6A61E200D4E5BD /* CoreLocation.framework */; };
 		A466B15F1E6A906700D4E5BD /* ProvinceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A466B15E1E6A906700D4E5BD /* ProvinceViewController.m */; };
 		A466B1651E6AA53000D4E5BD /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A466B1641E6AA53000D4E5BD /* CityViewController.m */; };
@@ -487,6 +488,8 @@
 		A45FDDFA1E6D3DA100854E2E /* XRCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XRCollectionViewCell.xib; sourceTree = "<group>"; };
 		A45FDE001E6D3DE600854E2E /* XRWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRWaterfallLayout.h; sourceTree = "<group>"; };
 		A45FDE011E6D3DE600854E2E /* XRWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRWaterfallLayout.m; sourceTree = "<group>"; };
+		A4663C141E98C49500F34A44 /* PublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishViewController.h; sourceTree = "<group>"; };
+		A4663C151E98C49500F34A44 /* PublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishViewController.m; sourceTree = "<group>"; };
 		A466B15A1E6A61E200D4E5BD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A466B15D1E6A906700D4E5BD /* ProvinceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvinceViewController.h; sourceTree = "<group>"; };
 		A466B15E1E6A906700D4E5BD /* ProvinceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProvinceViewController.m; sourceTree = "<group>"; };
@@ -1188,6 +1191,22 @@
 			path = TZLMUITests;
 			sourceTree = "<group>";
 		};
+		A4663C131E98C46500F34A44 /* 发布 */ = {
+			isa = PBXGroup;
+			children = (
+				A4663C141E98C49500F34A44 /* PublishViewController.h */,
+				A4663C151E98C49500F34A44 /* PublishViewController.m */,
+			);
+			name = "发布";
+			sourceTree = "<group>";
+		};
+		A4663C171E98E08900F34A44 /* 查询老赖 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "查询老赖";
+			sourceTree = "<group>";
+		};
 		A466B15C1E6A900500D4E5BD /* CityController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1425,6 +1444,8 @@
 				A47B5CA21E9246BE003AD64B /* 债券转让 */,
 				A4AB9CEE1E95D46A00723904 /* 网贷口子 */,
 				A4AB9CF71E95DFD200723904 /* 质押联盟 */,
+				A4663C171E98E08900F34A44 /* 查询老赖 */,
+				A4663C131E98C46500F34A44 /* 发布 */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1910,6 +1931,7 @@
 				A44E0DCA1E6412EA007818FC /* MJRefreshNormalHeader.m in Sources */,
 				A4AB9CF51E95D4C000723904 /* NetCreditCell.m in Sources */,
 				A45121A91E67BEF2005CC3A4 /* MBProgressHUD.m in Sources */,
+				A4663C161E98C49500F34A44 /* PublishViewController.m in Sources */,
 				A44E0D8E1E6412D9007818FC /* ViewController+MASAdditions.m in Sources */,
 				A44E0DC71E6412EA007818FC /* MJRefreshBackNormalFooter.m in Sources */,
 				A45FDDFB1E6D3DA100854E2E /* XRCollectionViewCell.m in Sources */,
