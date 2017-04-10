@@ -97,8 +97,6 @@
     
 }
 
-
-
 -(void)Clickdiss:(UIButton*)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
 }

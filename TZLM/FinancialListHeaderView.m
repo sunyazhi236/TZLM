@@ -11,10 +11,26 @@
 @implementation FinancialListHeaderView
 
 
+-(void)setProvinceView{
+    
+    self.backgroundColor = [UIColor whiteColor];
+    _provinceBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, kAutoWEX(253), kAutoHEX(25))];
+    [_provinceBtn setTitle:@"     全国" forState:UIControlStateNormal];
+    [_provinceBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_provinceBtn setTitleColor:[UIColor colorWithWhite:0.5 alpha:0.5] forState:UIControlStateHighlighted];
+    [_provinceBtn addTarget:self action:@selector(provinceClick) forControlEvents:UIControlEventTouchUpInside];
+    _provinceBtn.titleLabel.font = [UIFont systemFontOfSize_5:14];
+    _provinceBtn.backgroundColor = RGBColor(215, 215, 215);
+    _provinceBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    UIImageView *imgV = [[UIImageView alloc]initWithFrame:CGRectMake(kAutoWEX(225), kAutoHEX(3), kAutoWEX(18), kAutoHEX(18))];
+    imgV.image = [UIImage imageNamed:@"查询老赖2"];
+    [_provinceBtn addSubview:imgV];
+    [self addSubview:_provinceBtn];
+    
+}
+
 -(void)setView{
-    
     CGFloat btnWidth = (kScreenW - 3) / 4;
-    
     CGFloat labHeight = 30;
     CGFloat btnHeight = 40;
     self.backgroundColor = [UIColor whiteColor];
@@ -85,6 +101,13 @@
     _botView = [[UIView alloc]initWithFrame:CGRectMake(0, btnHeight, kScreenW, 5)];
     _botView.backgroundColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1];
     [self addSubview:_botView];
+}
+
+
+-(void)provinceClick{
+    if (self.provinceBlock) {
+        self.provinceBlock();
+    }
 }
 
 -(void)userClick{

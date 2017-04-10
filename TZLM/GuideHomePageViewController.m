@@ -295,10 +295,15 @@
 
 -(void)ClickCXLL:(UIButton *)sender{
     NSLog(@"CXLL");
+    NSUserDefaults *userdefault=[NSUserDefaults standardUserDefaults];
+    [userdefault setObject:@"cxll" forKey:@"CXLL"];
+    [userdefault synchronize];
+    HomePageViewController *home=[[HomePageViewController alloc]init];
+    [self.navigationController pushViewController:home animated:YES];
 
 }
 -(void)ClickQLL:(UIButton *)sender{
-    NSLog(@"QLL");
+    NSLog(@"WDKZ");
     NSUserDefaults *userdefault=[NSUserDefaults standardUserDefaults];
     [userdefault setObject:@"wdkz" forKey:@"WDKZ"];
     [userdefault synchronize];
@@ -308,7 +313,7 @@
 }
 
 -(void)ClickXSGG:(UIButton *)sender{
-    NSLog(@"XSGG");
+    NSLog(@"ZYLM");
     NSUserDefaults *userdefault=[NSUserDefaults standardUserDefaults];
     [userdefault setObject:@"zylm" forKey:@"ZYLM"];
     [userdefault synchronize];

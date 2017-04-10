@@ -107,8 +107,8 @@ static NSString *const RentCell = @"RentPledgeCell";
     }];
     _tableView.mj_footer = footer;
     
-    
 }
+
 -(void)requestinfo{
     //    [CFProgressHUD showLoadingWithView:self.view];
     

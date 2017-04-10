@@ -15,6 +15,7 @@
 #import "DebentureTransferViewController.h"
 #import "NetCreditViewController.h"
 #import "AllianceViewController.h"
+#import "DeadbeatViewController.h"
 #import "PublishViewController.h"
 
 
@@ -59,7 +60,7 @@
             vc4.title = @"质押联盟";
             [tabbar addSubItemWithViewController:vc4];
             
-            QueryInfoViewController * vc5 = [[QueryInfoViewController alloc]init];
+            DeadbeatViewController * vc5 = [[DeadbeatViewController alloc]init];
             vc5.title = @"查询老赖";
             [tabbar addSubItemWithViewController:vc5];
             
