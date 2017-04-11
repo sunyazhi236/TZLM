@@ -10,7 +10,7 @@
 #import "TZBondTransferCell.h"
 #import "TZFinancialAdvisorCell.h"
 #import "FinancialListHeaderView.h"
-
+#import "FinancialDetailViewController.h"
 
 @interface FinancialFirmsViewController ()<UITableViewDelegate,UITableViewDataSource>{
         UITableView *_tableView;//金融公司 tableView
@@ -466,7 +466,12 @@ static NSString *const JRGWCell = @"TZFinancialAdvisorCell";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    if ([tableView isEqual:_tableView]) {
+        AppDelegate *app =(AppDelegate*)[UIApplication sharedApplication].delegate;
+        FinancialDetailViewController *detailVC = [[FinancialDetailViewController alloc]init];
+        [app.viewController.navigationController pushViewController:detailVC animated:YES];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

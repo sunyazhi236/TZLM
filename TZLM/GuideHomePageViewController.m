@@ -326,6 +326,11 @@
 }
 -(void)ClickLMLT:(UIButton *)sender{
     NSLog(@"LMLT");
+    NSUserDefaults *userdefault=[NSUserDefaults standardUserDefaults];
+    [userdefault setObject:@"lmlt" forKey:@"LMLT"];
+    [userdefault synchronize];
+    HomePageViewController *home=[[HomePageViewController alloc]init];
+    [self.navigationController pushViewController:home animated:YES];
 }
 
 

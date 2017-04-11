@@ -152,6 +152,7 @@
 		A466B15F1E6A906700D4E5BD /* ProvinceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A466B15E1E6A906700D4E5BD /* ProvinceViewController.m */; };
 		A466B1651E6AA53000D4E5BD /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A466B1641E6AA53000D4E5BD /* CityViewController.m */; };
 		A4691AED1E70F765000C24C3 /* UIFontAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A4691AEC1E70F765000C24C3 /* UIFontAddition.m */; };
+		A476CA0A1E9C86AB0093C077 /* FinancialDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A476CA091E9C86AB0093C077 /* FinancialDetailViewController.m */; };
 		A47EACFD1E978139004C8D4F /* RentPledgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A47EACFB1E978139004C8D4F /* RentPledgeCell.m */; };
 		A47EACFE1E978139004C8D4F /* RentPledgeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47EACFC1E978139004C8D4F /* RentPledgeCell.xib */; };
 		A48AC3091E9B217700F5176B /* DeadbeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48AC3081E9B217700F5176B /* DeadbeatViewController.m */; };
@@ -161,6 +162,13 @@
 		A48AC3141E9B307400F5176B /* QueryOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A48AC3121E9B307400F5176B /* QueryOneCell.xib */; };
 		A48AC3181E9B308D00F5176B /* QueryNoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A48AC3161E9B308D00F5176B /* QueryNoCell.m */; };
 		A48AC3191E9B308D00F5176B /* QueryNoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A48AC3171E9B308D00F5176B /* QueryNoCell.xib */; };
+		A48AC31D1E9B727900F5176B /* ForumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48AC31C1E9B727900F5176B /* ForumViewController.m */; };
+		A48AC3221E9B72B700F5176B /* ForumThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A48AC3201E9B72B700F5176B /* ForumThreeCell.m */; };
+		A48AC3231E9B72B700F5176B /* ForumThreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A48AC3211E9B72B700F5176B /* ForumThreeCell.xib */; };
+		A48AC3271E9B72CC00F5176B /* ForumOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A48AC3251E9B72CC00F5176B /* ForumOneCell.m */; };
+		A48AC3281E9B72CC00F5176B /* ForumOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A48AC3261E9B72CC00F5176B /* ForumOneCell.xib */; };
+		A48AC32C1E9B72DA00F5176B /* ForumNoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A48AC32A1E9B72DA00F5176B /* ForumNoCell.m */; };
+		A48AC32D1E9B72DA00F5176B /* ForumNoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A48AC32B1E9B72DA00F5176B /* ForumNoCell.xib */; };
 		A49321181E8E32AB00B261F3 /* FinancialFirmsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A49321171E8E32AB00B261F3 /* FinancialFirmsViewController.m */; };
 		A49A41F41E948B3C009AE290 /* TZFinancialAdvisorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A49A41F21E948B3C009AE290 /* TZFinancialAdvisorCell.m */; };
 		A49A41F51E948B3C009AE290 /* TZFinancialAdvisorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49A41F31E948B3C009AE290 /* TZFinancialAdvisorCell.xib */; };
@@ -504,6 +512,8 @@
 		A466B1641E6AA53000D4E5BD /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
 		A4691AEB1E70F765000C24C3 /* UIFontAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFontAddition.h; sourceTree = "<group>"; };
 		A4691AEC1E70F765000C24C3 /* UIFontAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFontAddition.m; sourceTree = "<group>"; };
+		A476CA081E9C86AB0093C077 /* FinancialDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialDetailViewController.h; sourceTree = "<group>"; };
+		A476CA091E9C86AB0093C077 /* FinancialDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialDetailViewController.m; sourceTree = "<group>"; };
 		A47EACFA1E978139004C8D4F /* RentPledgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RentPledgeCell.h; sourceTree = "<group>"; };
 		A47EACFB1E978139004C8D4F /* RentPledgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RentPledgeCell.m; sourceTree = "<group>"; };
 		A47EACFC1E978139004C8D4F /* RentPledgeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RentPledgeCell.xib; sourceTree = "<group>"; };
@@ -518,6 +528,17 @@
 		A48AC3151E9B308D00F5176B /* QueryNoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryNoCell.h; sourceTree = "<group>"; };
 		A48AC3161E9B308D00F5176B /* QueryNoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryNoCell.m; sourceTree = "<group>"; };
 		A48AC3171E9B308D00F5176B /* QueryNoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QueryNoCell.xib; sourceTree = "<group>"; };
+		A48AC31B1E9B727900F5176B /* ForumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumViewController.h; sourceTree = "<group>"; };
+		A48AC31C1E9B727900F5176B /* ForumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumViewController.m; sourceTree = "<group>"; };
+		A48AC31F1E9B72B700F5176B /* ForumThreeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumThreeCell.h; sourceTree = "<group>"; };
+		A48AC3201E9B72B700F5176B /* ForumThreeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumThreeCell.m; sourceTree = "<group>"; };
+		A48AC3211E9B72B700F5176B /* ForumThreeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForumThreeCell.xib; sourceTree = "<group>"; };
+		A48AC3241E9B72CC00F5176B /* ForumOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumOneCell.h; sourceTree = "<group>"; };
+		A48AC3251E9B72CC00F5176B /* ForumOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumOneCell.m; sourceTree = "<group>"; };
+		A48AC3261E9B72CC00F5176B /* ForumOneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForumOneCell.xib; sourceTree = "<group>"; };
+		A48AC3291E9B72DA00F5176B /* ForumNoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumNoCell.h; sourceTree = "<group>"; };
+		A48AC32A1E9B72DA00F5176B /* ForumNoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumNoCell.m; sourceTree = "<group>"; };
+		A48AC32B1E9B72DA00F5176B /* ForumNoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForumNoCell.xib; sourceTree = "<group>"; };
 		A49321161E8E32AB00B261F3 /* FinancialFirmsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialFirmsViewController.h; sourceTree = "<group>"; };
 		A49321171E8E32AB00B261F3 /* FinancialFirmsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialFirmsViewController.m; sourceTree = "<group>"; };
 		A49A41F11E948B3C009AE290 /* TZFinancialAdvisorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZFinancialAdvisorCell.h; sourceTree = "<group>"; };
@@ -1316,6 +1337,24 @@
 		A48AC31A1E9B6EB300F5176B /* 联盟论坛 */ = {
 			isa = PBXGroup;
 			children = (
+				A48AC31B1E9B727900F5176B /* ForumViewController.h */,
+				A48AC31C1E9B727900F5176B /* ForumViewController.m */,
+			);
+			name = "联盟论坛";
+			sourceTree = "<group>";
+		};
+		A48AC31E1E9B728100F5176B /* 联盟论坛 */ = {
+			isa = PBXGroup;
+			children = (
+				A48AC31F1E9B72B700F5176B /* ForumThreeCell.h */,
+				A48AC3201E9B72B700F5176B /* ForumThreeCell.m */,
+				A48AC3211E9B72B700F5176B /* ForumThreeCell.xib */,
+				A48AC3241E9B72CC00F5176B /* ForumOneCell.h */,
+				A48AC3251E9B72CC00F5176B /* ForumOneCell.m */,
+				A48AC3261E9B72CC00F5176B /* ForumOneCell.xib */,
+				A48AC3291E9B72DA00F5176B /* ForumNoCell.h */,
+				A48AC32A1E9B72DA00F5176B /* ForumNoCell.m */,
+				A48AC32B1E9B72DA00F5176B /* ForumNoCell.xib */,
 			);
 			name = "联盟论坛";
 			sourceTree = "<group>";
@@ -1338,6 +1377,8 @@
 			children = (
 				A49321161E8E32AB00B261F3 /* FinancialFirmsViewController.h */,
 				A49321171E8E32AB00B261F3 /* FinancialFirmsViewController.m */,
+				A476CA081E9C86AB0093C077 /* FinancialDetailViewController.h */,
+				A476CA091E9C86AB0093C077 /* FinancialDetailViewController.m */,
 			);
 			name = "金融公司";
 			sourceTree = "<group>";
@@ -1516,6 +1557,7 @@
 				A4AB9CED1E95D44E00723904 /* 网贷口子 */,
 				A4AB9CF81E95DFE700723904 /* 质押联盟 */,
 				A48AC30A1E9B300300F5176B /* 查询老赖 */,
+				A48AC31E1E9B728100F5176B /* 联盟论坛 */,
 				A45FDDF81E6D3DA100854E2E /* XRCollectionViewCell.h */,
 				A45FDDF91E6D3DA100854E2E /* XRCollectionViewCell.m */,
 				A45FDDFA1E6D3DA100854E2E /* XRCollectionViewCell.xib */,
@@ -1808,9 +1850,11 @@
 				A44FF39F1E667A700052D0A3 /* TZBorrowInfoCell.xib in Resources */,
 				A4407C761E63CCD30052E144 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				A44FF37E1E666B1C0052D0A3 /* pic_loading_5.png in Resources */,
+				A48AC3231E9B72B700F5176B /* ForumThreeCell.xib in Resources */,
 				A45FDDFC1E6D3DA100854E2E /* XRCollectionViewCell.xib in Resources */,
 				A49A42071E949026009AE290 /* NOImgCell.xib in Resources */,
 				A4E113E31E617BCD00438E12 /* MSAlertController_ActionSheet.xib in Resources */,
+				A48AC32D1E9B72DA00F5176B /* ForumNoCell.xib in Resources */,
 				A4E114411E618B8800438E12 /* lk_noimage@2x.png in Resources */,
 				A48AC30F1E9B304D00F5176B /* QueryThreeCell.xib in Resources */,
 				A4407C7B1E63CCD30052E144 /* README.txt in Resources */,
@@ -1832,6 +1876,7 @@
 				A44E0D841E6412D9007818FC /* Info.plist in Resources */,
 				A44FF3841E666B2A0052D0A3 /* pic_loading_8.png in Resources */,
 				A45BF2951E601BC900266FA8 /* Assets.xcassets in Resources */,
+				A48AC3281E9B72CC00F5176B /* ForumOneCell.xib in Resources */,
 				A44FF3801E666B210052D0A3 /* pic_loading_6.png in Resources */,
 				A4AB9D0A1E961AE600723904 /* AllianceNOCell.xib in Resources */,
 				A49A41FD1E948FF6009AE290 /* ThreeImgCell.xib in Resources */,
@@ -1899,11 +1944,13 @@
 				A4E113F51E6184EE00438E12 /* BorrowInfoViewController.m in Sources */,
 				A45121AF1E67F663005CC3A4 /* SMGlobalDevices.m in Sources */,
 				A44FF3731E66684E0052D0A3 /* CFProgressHUD.m in Sources */,
+				A48AC32C1E9B72DA00F5176B /* ForumNoCell.m in Sources */,
 				A44FF3491E6661B30052D0A3 /* AFHTTPSessionManager.m in Sources */,
 				A44E0DC21E6412EA007818FC /* MJRefreshHeader.m in Sources */,
 				A44FF34E1E6661B30052D0A3 /* AFURLResponseSerialization.m in Sources */,
 				A44FF3B81E66A61B0052D0A3 /* MJArgument.m in Sources */,
 				A44FF3471E6661B30052D0A3 /* AFHTTPRequestOperation.m in Sources */,
+				A48AC3271E9B72CC00F5176B /* ForumOneCell.m in Sources */,
 				A4E113D21E61568100438E12 /* RDVTabBarController.m in Sources */,
 				A4E113ED1E61828500438E12 /* HomePageViewController.m in Sources */,
 				A44E0D8D1E6412D9007818FC /* View+MASAdditions.m in Sources */,
@@ -1948,6 +1995,7 @@
 				A4ED14141E8B9E57003C76ED /* PublishLoanViewController.m in Sources */,
 				A44FF3BA1E66A61B0052D0A3 /* MJFoundation.m in Sources */,
 				A4AB9CF11E95D4A600723904 /* NetCreditViewController.m in Sources */,
+				A48AC31D1E9B727900F5176B /* ForumViewController.m in Sources */,
 				A47EACFD1E978139004C8D4F /* RentPledgeCell.m in Sources */,
 				A4E114441E618B8800438E12 /* SDWebImageCompat.m in Sources */,
 				A4E113D11E61568100438E12 /* RDVTabBar.m in Sources */,
@@ -1971,6 +2019,7 @@
 				A44FF3611E66645E0052D0A3 /* WMHttpTool.m in Sources */,
 				A44FF39E1E667A700052D0A3 /* TZBorrowInfoCell.m in Sources */,
 				A44E0DC41E6412EA007818FC /* MJRefreshAutoNormalFooter.m in Sources */,
+				A476CA0A1E9C86AB0093C077 /* FinancialDetailViewController.m in Sources */,
 				A44E0D501E64012C007818FC /* RegisterViewController.m in Sources */,
 				A44FF34C1E6661B30052D0A3 /* AFURLConnectionOperation.m in Sources */,
 				A41859421E65598000DA8F68 /* TAAbstractDotView.m in Sources */,
@@ -1984,6 +2033,7 @@
 				A4AB9CF51E95D4C000723904 /* NetCreditCell.m in Sources */,
 				A45121A91E67BEF2005CC3A4 /* MBProgressHUD.m in Sources */,
 				A4663C161E98C49500F34A44 /* PublishViewController.m in Sources */,
+				A48AC3221E9B72B700F5176B /* ForumThreeCell.m in Sources */,
 				A44E0D8E1E6412D9007818FC /* ViewController+MASAdditions.m in Sources */,
 				A44E0DC71E6412EA007818FC /* MJRefreshBackNormalFooter.m in Sources */,
 				A45FDDFB1E6D3DA100854E2E /* XRCollectionViewCell.m in Sources */,

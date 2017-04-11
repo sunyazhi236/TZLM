@@ -17,7 +17,7 @@
 #import "AllianceViewController.h"
 #import "DeadbeatViewController.h"
 #import "PublishViewController.h"
-
+#import "ForumViewController.h"
 
 @interface HomePageViewController ()<CLLocationManagerDelegate,UISearchBarDelegate>{
      UIButton *button;
@@ -64,7 +64,7 @@
             vc5.title = @"查询老赖";
             [tabbar addSubItemWithViewController:vc5];
             
-            QueryInfoViewController * vc6 = [[QueryInfoViewController alloc]init];
+            ForumViewController * vc6 = [[ForumViewController alloc]init];
             vc6.title = @"联盟论坛";
             [tabbar addSubItemWithViewController:vc6];
             
