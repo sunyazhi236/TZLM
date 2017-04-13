@@ -10,7 +10,7 @@
 #import "ThreeImgCell.h"
 #import "OneImgCell.h"
 #import "NOImgCell.h"
-
+#import "TransferDetailViewController.h"
 
 @interface DebentureTransferViewController ()<UITableViewDelegate,UITableViewDataSource>{
     UILabel *dycLabel;
@@ -219,7 +219,17 @@ static NSString *const NoCell = @"NOImgCell";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    if ([tableView isEqual:_tableView]) {
+        AppDelegate *app =(AppDelegate*)[UIApplication sharedApplication].delegate;
+        TransferDetailViewController *detailVC = [[TransferDetailViewController alloc]init];
+        [app.viewController.navigationController pushViewController:detailVC animated:YES];
+
+    }else{
+        AppDelegate *app =(AppDelegate*)[UIApplication sharedApplication].delegate;
+        TransferDetailViewController *detailVC = [[TransferDetailViewController alloc]init];
+        [app.viewController.navigationController pushViewController:detailVC animated:YES];
+
+    }
 }
 
 - (void)didReceiveMemoryWarning {

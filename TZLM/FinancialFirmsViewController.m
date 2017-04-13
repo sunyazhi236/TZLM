@@ -11,6 +11,8 @@
 #import "TZFinancialAdvisorCell.h"
 #import "FinancialListHeaderView.h"
 #import "FinancialDetailViewController.h"
+#import "CounselorDetailViewController.h"
+
 
 @interface FinancialFirmsViewController ()<UITableViewDelegate,UITableViewDataSource>{
         UITableView *_tableView;//金融公司 tableView
@@ -470,6 +472,11 @@ static NSString *const JRGWCell = @"TZFinancialAdvisorCell";
         AppDelegate *app =(AppDelegate*)[UIApplication sharedApplication].delegate;
         FinancialDetailViewController *detailVC = [[FinancialDetailViewController alloc]init];
         [app.viewController.navigationController pushViewController:detailVC animated:YES];
+    }else{
+        AppDelegate *app =(AppDelegate*)[UIApplication sharedApplication].delegate;
+        CounselorDetailViewController *detailVC = [[CounselorDetailViewController alloc]init];
+        [app.viewController.navigationController pushViewController:detailVC animated:YES];
+
     }
     
 }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="FinancialDetailContentCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoL-eZ-UUB">
+                        <rect key="frame" x="8" y="0.0" width="304" height="188"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <mutableString key="text">卡圣金融联盟：2016火爆的互联网+金融营销！！！ 
+卡圣金融联盟是专业为企业、单位以及个人提供计算机软件开发、转让与服务、网络技术服务、企业营销咨询、企业营销策划、电子商务信息咨询服务、市场信息咨询、市场调查等服务的国内知名IT公司。 
+总部位于风景秀丽的江北水城--聊城，是行业内领先的信用管理、信用理财与信用增值等一站式服务运营商之一，也是中国金融精准营销服务用户认可且有影响力的互联网+金融专业公司。 
+专业、诚信，一次合作、终身信任！ 
+卡圣金融联盟欢迎你的加入！！！ 
+加微信57566819咨询了解详情 
+咨询电话：18954478808 
+云数据营销一体机功能介绍：
+http://v.youku.com/v_show/id_XMTU5MjIzNzIxNg==.html?sharefrom=iphone&amp;favid=586&amp;x= 与多家银行均有业务合作， 微信营销， 抢红包神器。征信查询，手机定位， 疯狂电话， 孩子的学习机，功能强大 云数据智能系统集合市面所有金融营销尖端技术，植入云数据**自主研发的金融系统软件和营销软件！ 
+卡圣联盟诚邀您的加入！！！</mutableString>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="content" destination="uoL-eZ-UUB" id="cGc-hL-rJj"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

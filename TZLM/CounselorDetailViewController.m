@@ -1,13 +1,12 @@
 //
-//  FinancialDetailViewController.m
+//  CounselorDetailViewController.m
 //  TZLM
 //
-//  Created by  sun on 2017/4/11.
+//  Created by  sun on 2017/4/12.
 //  Copyright © 2017年 上海询通商务咨询有限公司. All rights reserved.
 //
 
-#import "FinancialDetailViewController.h"
-
+#import "CounselorDetailViewController.h"
 #import "FinancialDetailHeaderCell.h"
 #import "FinancialDetailContentCell.h"
 #import "FinancialDetailUserCommentCell.h"
@@ -15,19 +14,21 @@
 #import <ShareSDKUI/ShareSDK+SSUI.h>
 #import <ShareSDKUI/SSUIShareActionSheetStyle.h>
 
-@interface FinancialDetailViewController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>{
+@interface CounselorDetailViewController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>{
     UIButton *_shareBtn;
     UITableView *_tableView;
 }
 @property (nonatomic,strong)UIView *bottomView;
 @property (nonatomic,strong)UITextField *commentTextField;
 @property (nonatomic,strong)UIButton *commentButton;
+
 @end
 
-@implementation FinancialDetailViewController
+@implementation CounselorDetailViewController
 static NSString *const FDHCell = @"FinancialDetailHeaderCell";
 static NSString *const FDCCell = @"FinancialDetailContentCell";
 static NSString *const FDUCCell = @"FinancialDetailUserCommentCell";
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,12 +54,11 @@ static NSString *const FDUCCell = @"FinancialDetailUserCommentCell";
     [self.view addGestureRecognizer:tapGestureRecognizer];
     
 }
-
 -(void)didClickShareSDK:(UIButton*)sender{
     [SSUIShareActionSheetStyle setShareActionSheetStyle:ShareActionSheetStyleSimple];
     //1、创建分享参数
     NSArray* imageArray = @[[UIImage imageNamed:@"headerPH"]];
-//    （注意：图片必须要在Xcode左边目录里面，名称必须要传正确，如果要分享网络图片，可以这样传iamge参数 images:@[@"http://mob.com/Assets/images/logo.png?v=20150320"]）
+    //    （注意：图片必须要在Xcode左边目录里面，名称必须要传正确，如果要分享网络图片，可以这样传iamge参数 images:@[@"http://mob.com/Assets/images/logo.png?v=20150320"]）
     if (imageArray) {
         
         NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
@@ -113,15 +113,14 @@ static NSString *const FDUCCell = @"FinancialDetailUserCommentCell";
 
 //键盘即将出现的时候
 - (void)keyboardWillShow:(NSNotification *)sender{
-    
     CGRect keyboardRect = [(sender.userInfo[UIKeyboardFrameBeginUserInfoKey]) CGRectValue];
     //改变bttomView的y值，防止被键盘遮住
     CGRect bottomViewRect = self.bottomView.frame;
     bottomViewRect.origin.y = self.view.frame.size.height - keyboardRect.size.height - bottomViewRect.size.height;
     self.bottomView.frame = bottomViewRect;
-   [self.view bringSubviewToFront:self.bottomView];
+    [self.view bringSubviewToFront:self.bottomView];
     NSLog(@"++++%@",NSStringFromCGRect(keyboardRect));
-
+    
 }
 
 //键盘即将消失的时候
@@ -136,7 +135,7 @@ static NSString *const FDUCCell = @"FinancialDetailUserCommentCell";
 - (void)setupButtomView{
     self.bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenH-64-kAutoHEX(35), kScreenW, kAutoHEX(35))];
     self.bottomView.backgroundColor = [UIColor whiteColor];
-
+    
     [self.view addSubview:self.bottomView];
     //添加textfield
     self.commentTextField = [[UITextField alloc] initWithFrame:CGRectMake(kAutoWEX(30), kAutoHEX(5), kAutoWEX(230), kAutoHEX(25))];
@@ -167,6 +166,11 @@ static NSString *const FDUCCell = @"FinancialDetailUserCommentCell";
             fdhCell=[[[NSBundle mainBundle]loadNibNamed:FDHCell owner:self options:nil]lastObject];
             
         }
+       fdhCell.companyName.text = @"";
+        fdhCell.userName.text = @"顾问名称：韩经理";
+        fdhCell.phone.text = @"联系电话：13739797590";
+        fdhCell.website.text = @"所在公司：天津盛海宇溢投资有限公司";
+        fdhCell.intro.text = @"业务简介：2016火爆的互联网+金融营销！！！";
         return fdhCell;
     }  if (indexPath.section == 1) {
         if (fdcCell == nil) {
@@ -181,7 +185,7 @@ static NSString *const FDUCCell = @"FinancialDetailUserCommentCell";
         }
         return fducCell;
     }
-
+    
     return fdhCell;
 }
 
@@ -213,23 +217,18 @@ static NSString *const FDUCCell = @"FinancialDetailUserCommentCell";
     }else{
         return 80;
     }
-
     
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
     
 }
-
-
 
 //发送按钮的回调方法
 - (void)commentButtonAction:(UIButton *)sender{
     //取消第一响应者
     [self.commentTextField resignFirstResponder];
 }
-
 
 //文本框内容发生变化
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
