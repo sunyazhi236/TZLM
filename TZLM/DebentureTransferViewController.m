@@ -11,6 +11,7 @@
 #import "OneImgCell.h"
 #import "NOImgCell.h"
 #import "TransferDetailViewController.h"
+#import "OtherTransferDetailViewController.h"
 
 @interface DebentureTransferViewController ()<UITableViewDelegate,UITableViewDataSource>{
     UILabel *dycLabel;
@@ -226,7 +227,7 @@ static NSString *const NoCell = @"NOImgCell";
 
     }else{
         AppDelegate *app =(AppDelegate*)[UIApplication sharedApplication].delegate;
-        TransferDetailViewController *detailVC = [[TransferDetailViewController alloc]init];
+        OtherTransferDetailViewController *detailVC = [[OtherTransferDetailViewController alloc]init];
         [app.viewController.navigationController pushViewController:detailVC animated:YES];
 
     }

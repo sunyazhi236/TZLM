@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface TransferDetailCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIView *bgView;
+
 @property (weak, nonatomic) IBOutlet UILabel *brand;//品牌
 @property (weak, nonatomic) IBOutlet UILabel *series;//车系
 @property (weak, nonatomic) IBOutlet UILabel *price;//价格
@@ -24,5 +26,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *tradingPlace;//交易地点
 @property (weak, nonatomic) IBOutlet UILabel *contacts;//联系人
 @property (weak, nonatomic) IBOutlet UILabel *contactInformation;//联系方式
+
+@property (weak, nonatomic) IBOutlet UILabel *content;
+@property (weak, nonatomic) IBOutlet UIImageView *imgV;
 
 @end

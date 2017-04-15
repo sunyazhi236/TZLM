@@ -189,6 +189,9 @@
 		A49A42021E949008009AE290 /* OneImgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49A42001E949008009AE290 /* OneImgCell.xib */; };
 		A49A42061E949026009AE290 /* NOImgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A49A42041E949026009AE290 /* NOImgCell.m */; };
 		A49A42071E949026009AE290 /* NOImgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49A42051E949026009AE290 /* NOImgCell.xib */; };
+		A49D11421EA1F03200563A5A /* OtherTransferDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A49D11411EA1F03200563A5A /* OtherTransferDetailViewController.m */; };
+		A49D11471EA1F21000563A5A /* OtherTransferDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A49D11451EA1F21000563A5A /* OtherTransferDetailCell.m */; };
+		A49D11481EA1F21000563A5A /* OtherTransferDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49D11461EA1F21000563A5A /* OtherTransferDetailCell.xib */; };
 		A4AB9CF11E95D4A600723904 /* NetCreditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB9CF01E95D4A600723904 /* NetCreditViewController.m */; };
 		A4AB9CF51E95D4C000723904 /* NetCreditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB9CF31E95D4C000723904 /* NetCreditCell.m */; };
 		A4AB9CF61E95D4C000723904 /* NetCreditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4AB9CF41E95D4C000723904 /* NetCreditCell.xib */; };
@@ -581,6 +584,11 @@
 		A49A42031E949026009AE290 /* NOImgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOImgCell.h; sourceTree = "<group>"; };
 		A49A42041E949026009AE290 /* NOImgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOImgCell.m; sourceTree = "<group>"; };
 		A49A42051E949026009AE290 /* NOImgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NOImgCell.xib; sourceTree = "<group>"; };
+		A49D11401EA1F03200563A5A /* OtherTransferDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherTransferDetailViewController.h; sourceTree = "<group>"; };
+		A49D11411EA1F03200563A5A /* OtherTransferDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherTransferDetailViewController.m; sourceTree = "<group>"; };
+		A49D11441EA1F21000563A5A /* OtherTransferDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherTransferDetailCell.h; sourceTree = "<group>"; };
+		A49D11451EA1F21000563A5A /* OtherTransferDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherTransferDetailCell.m; sourceTree = "<group>"; };
+		A49D11461EA1F21000563A5A /* OtherTransferDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherTransferDetailCell.xib; sourceTree = "<group>"; };
 		A4AB9CEF1E95D4A600723904 /* NetCreditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetCreditViewController.h; sourceTree = "<group>"; };
 		A4AB9CF01E95D4A600723904 /* NetCreditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetCreditViewController.m; sourceTree = "<group>"; };
 		A4AB9CF21E95D4C000723904 /* NetCreditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetCreditCell.h; sourceTree = "<group>"; };
@@ -1327,6 +1335,8 @@
 				A49A41F71E948EB6009AE290 /* DebentureTransferViewController.m */,
 				A46710F21E9F54B5004D9127 /* TransferDetailViewController.h */,
 				A46710F31E9F54B5004D9127 /* TransferDetailViewController.m */,
+				A49D11401EA1F03200563A5A /* OtherTransferDetailViewController.h */,
+				A49D11411EA1F03200563A5A /* OtherTransferDetailViewController.m */,
 			);
 			name = "债券转让";
 			sourceTree = "<group>";
@@ -1369,6 +1379,7 @@
 				A49A42031E949026009AE290 /* NOImgCell.h */,
 				A49A42041E949026009AE290 /* NOImgCell.m */,
 				A49A42051E949026009AE290 /* NOImgCell.xib */,
+				A49D11431EA1F1C100563A5A /* 其他债权详情Cell */,
 				A46710F51E9F54E6004D9127 /* 抵押车详情Cell */,
 			);
 			name = "债券转让";
@@ -1439,6 +1450,16 @@
 				A464ED841E9E239800999D85 /* CounselorDetailViewController.m */,
 			);
 			name = "金融公司";
+			sourceTree = "<group>";
+		};
+		A49D11431EA1F1C100563A5A /* 其他债权详情Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A49D11441EA1F21000563A5A /* OtherTransferDetailCell.h */,
+				A49D11451EA1F21000563A5A /* OtherTransferDetailCell.m */,
+				A49D11461EA1F21000563A5A /* OtherTransferDetailCell.xib */,
+			);
+			name = "其他债权详情Cell";
 			sourceTree = "<group>";
 		};
 		A4AB9CED1E95D44E00723904 /* 网贷口子 */ = {
@@ -1911,6 +1932,7 @@
 				A48AC3231E9B72B700F5176B /* ForumThreeCell.xib in Resources */,
 				A45FDDFC1E6D3DA100854E2E /* XRCollectionViewCell.xib in Resources */,
 				A49A42071E949026009AE290 /* NOImgCell.xib in Resources */,
+				A49D11481EA1F21000563A5A /* OtherTransferDetailCell.xib in Resources */,
 				A4E113E31E617BCD00438E12 /* MSAlertController_ActionSheet.xib in Resources */,
 				A464ED811E9E042000999D85 /* FinancialDetailUserCommentCell.xib in Resources */,
 				A48AC32D1E9B72DA00F5176B /* ForumNoCell.xib in Resources */,
@@ -2011,6 +2033,7 @@
 				A48AC32C1E9B72DA00F5176B /* ForumNoCell.m in Sources */,
 				A464ED761E9E03C000999D85 /* FinancialDetailHeaderCell.m in Sources */,
 				A44FF3491E6661B30052D0A3 /* AFHTTPSessionManager.m in Sources */,
+				A49D11421EA1F03200563A5A /* OtherTransferDetailViewController.m in Sources */,
 				A44E0DC21E6412EA007818FC /* MJRefreshHeader.m in Sources */,
 				A44FF34E1E6661B30052D0A3 /* AFURLResponseSerialization.m in Sources */,
 				A44FF3B81E66A61B0052D0A3 /* MJArgument.m in Sources */,
@@ -2126,6 +2149,7 @@
 				A44E0D881E6412D9007818FC /* MASLayoutConstraint.m in Sources */,
 				A44FF3C21E66A61B0052D0A3 /* NSObject+MJMember.m in Sources */,
 				A44FF3BD1E66A61B0052D0A3 /* MJMethod.m in Sources */,
+				A49D11471EA1F21000563A5A /* OtherTransferDetailCell.m in Sources */,
 				A44FF3481E6661B30052D0A3 /* AFHTTPRequestOperationManager.m in Sources */,
 				A41859441E65598000DA8F68 /* TADotView.m in Sources */,
 				A4E114031E6185D200438E12 /* AboutMyViewController.m in Sources */,

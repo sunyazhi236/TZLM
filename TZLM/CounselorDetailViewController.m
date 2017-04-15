@@ -215,7 +215,7 @@ static NSString *const FDUCCell = @"FinancialDetailUserCommentCell";
     if (indexPath.section==0||indexPath.section==1) {
         return kAutoHEX(190);
     }else{
-        return 80;
+        return kAutoHEX(80);
     }
     
 }
